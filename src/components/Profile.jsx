@@ -1,15 +1,17 @@
+import s from './scss/Profile.module.scss'
+
 
 const Profile = () => {
 	return (
-		<div className='content'>
-			<div className='content__img'>
+		<div className={s.content}>
+			<div className={s.content__img}>
 				<img src='https://i.ytimg.com/vi/uKntdthpcCY/maxresdefault.jpg'></img>
 			</div>
-			<div className='content__info-wrapper'>
-				<div className='content__avatar'>
+			<div className={s.content__infoWrapper}>
+				<div className={s.content__avatar}>
 					<img src='https://petshoper.com/wp-content/uploads/2020/01/Top-10-Most-Popular-Dog-Breeds.jpg'></img>
 				</div>
-				<div className='content__description'>
+				<div className={s.content__description}>
 					<p>Dmitry K.</p>
 					<p>Date of Birth: 2 january</p>
 					<p>City: Minsk</p>
@@ -17,29 +19,29 @@ const Profile = () => {
 					<p>Web Site: https://it-kamasutra.com</p>
 				</div>
 			</div>
-			<div className='content__form-wrapper'>
-				<div className='content__form-header'>
+			<div className={s.content__formWrapper}>
+				<div className={s.content__formHeader}>
 					My posts
 				</div>
-				<div className='content__form-input'>
-					<textarea className='forma' placeholder='your news...'></textarea>
+				<div className={s.content__formInput}>
+					<textarea placeholder='your news...'></textarea>
 				</div>
-				<div className='content__form-button'>
+				<div className={s.content__formButton}>
 					<button>Send</button>
 				</div>
 			</div>
-			<div className='content__post-wrapper'>
-				<div className='content__first-post'>
-					<div className='content__post-icon'>
+			<div className={s.content__postWrapper}>
+				<div className={s.content__firstPost}>
+					<div className={s.content__postIcon}>
 					</div>
-					<div className='content__post-text'>
+					<div className={s.content__postText}>
 						Guys, anybody like me?
 					</div>
 				</div>
-				<div className='content__second-post'>
-					<div className='content__post-icon'>
+				<div className={s.content__secondPost}>
+					<div className={s.content__postIcon}>
 					</div>
-					<div className='content__post-text'>
+					<div className={s.content__postText}>
 						Please, subscribe to my page!
 					</div>
 				</div>

@@ -1,0 +1,18 @@
+@import "./lib/nullstyle";
+
+body {
+	background-color: #c0c0c0;
+}
+.app-wrapper {
+	height: 100vh;
+	padding: 10px;
+	background-color: #fff;
+	width: 1600px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-rows: 60px 1fr;
+	grid-template-columns: 2fr 10fr;
+	grid-template-areas: 
+	"header header"
+	"nav container";
+}

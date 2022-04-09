@@ -1,20 +1,22 @@
+import s from './scss/Navbar.module.scss'
 
+console.log(s);
 const Navbar = () => {
 	return (
-		<nav className='nav'>
-			<div>
+		<nav className={s.nav}>
+			<div className={s.nav__item}>
 				<a href="">Profile</a>
 			</div>
-			<div>
+			<div className={s.nav__item}>
 				<a href="">Messages</a>
 			</div>
-			<div>
+			<div className={s.nav__item}>
 				<a href="">News</a>
 			</div>
-			<div>
-				<a href="">Music</a>
+			<div className={s.nav__item}>
+				<a href="">Music</a> 
 			</div>
-			<div>
+			<div className={`${s.nav__item} ${s.nav__item_active}`}>
 				<a href="">Settings</a>
 			</div>
 		</nav>
