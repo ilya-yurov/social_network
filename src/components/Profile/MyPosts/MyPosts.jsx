@@ -12,14 +12,9 @@ const MyPosts = () => {
 				<Input />
 			</div>
 			<div className={s.content__postWrapper}>
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
+				<Post message="Hello, that's my first try of props usage!" likes = "10" />
+				<Post message="I wanna have 99 likes at this post!" likes = "99" />
+				<Post message="OMG he did it!!!" likes = "999" />
 			</div>
 		</div>
 	);

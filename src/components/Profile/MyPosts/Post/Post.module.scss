@@ -1,15 +1,36 @@
 .content {
 		&__post {
-			display: flex;
-			gap: 20px;
+			display: grid;
+			grid-template-rows: 55px 1fr;
+			grid-template-columns: 55px 1fr;
+			grid-template-areas: 
+			"icon text"
+			"like count";
+			margin-bottom: 25px;
+			/* gap: 20px; */
+		}
+		&__like {
+			padding-left: 8px;
+			img {
+				width: 30px;
+			}
+		}
+		&__count {
+			font-size: 15px;
+			font-weight: bold;
+			padding-top: 10px;
+			grid-area: count;
 		}
 		&__postIcon {
+			grid-area: icon;
 			width: 50px;
 			height: 50px;
 			border-radius: 50%;
 			background-color: orange;
 		}
 		&__postText {
+			font-style: italic;
+			grid-area: text;
 			font-size: 20px;
 			padding-top: 15px;
 		}
