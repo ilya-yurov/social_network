@@ -1,0 +1,96 @@
+.content {
+	grid-area: container;
+	background-color: white;
+		&__img {
+			padding: 10px 0 10px 10px;
+			img {
+				width: 100%;
+				height: 300px;
+			}
+		}
+
+		&__infoWrapper {
+			margin: 0px 10px 10px 10px;
+			display: flex;
+			gap: 20px;
+			flex-direction: row;
+		}
+
+		&__avatar {
+			img {
+				max-width: 200px;
+				min-height: 200px;
+			}
+		}
+
+		&__description {
+			font-size: 25px;
+			p:first-child {
+				font-size: 30px;
+				font-weight: bold;
+				margin-bottom: 20px;
+			}
+		}
+
+		&__formWrapper {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			margin: 20px;
+			width: 1000px;
+		}
+
+		&__formHeader {
+			font-size: 25px;
+		}
+
+		&__formInput {
+			border: 1px solid black;
+			width: 100%;
+			textarea {
+				resize: none;
+				display: block;
+				overflow: hidden;
+				min-width: 100%;
+				background-color: wheat;
+				padding: 10px;
+				font-size: 25px;
+			}
+		}
+
+		&__formButton {
+			align-self: end;
+			button {
+				font-size: 25px;
+				color: #fff;
+				background-color: green;
+				min-width: 100px;
+			}
+		}
+
+		&__postWrapper {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			margin: 20px;
+		}
+		&__firstPost {
+			display: flex;
+			gap: 20px;
+		}
+		&__secondPost {
+			display: flex;
+			gap: 20px;
+		}
+		&__postIcon {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: orange;
+		}
+
+		&__postText {
+			font-size: 20px;
+			padding-top: 15px;
+		}
+}

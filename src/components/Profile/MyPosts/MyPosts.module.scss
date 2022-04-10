@@ -1,0 +1,15 @@
+.content {
+	&__formWrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		margin: 20px;
+		width: 1000px;
+	}
+	&__postWrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		margin: 20px;
+	}
+}
