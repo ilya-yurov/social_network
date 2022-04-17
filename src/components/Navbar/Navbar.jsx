@@ -4,19 +4,19 @@ console.log(s);
 const Navbar = () => {
 	return (
 		<nav className={s.nav}>
-			<div className={s.nav__item}>
-				<a href="">Profile</a>
+			<div className={`${s.nav__item} ${s.nav__item_hover}`}>
+				<a href="/profile">Profile</a>
 			</div>
-			<div className={s.nav__item}>
-				<a href="">Messages</a>
+			<div className={`${s.nav__item} ${s.nav__item_hover}`}>
+				<a href="/dialogs">Messages</a>
 			</div>
-			<div className={s.nav__item}>
+			<div className={`${s.nav__item} ${s.nav__item_hover}`}>
 				<a href="">News</a>
 			</div>
-			<div className={s.nav__item}>
+			<div className={`${s.nav__item} ${s.nav__item_hover}`}>
 				<a href="">Music</a> 
 			</div>
-			<div className={`${s.nav__item} ${s.nav__item_active}`}>
+			<div className={`${s.nav__item} ${s.nav__item_hover}`}>
 				<a href="">Settings</a>
 			</div>
 		</nav>

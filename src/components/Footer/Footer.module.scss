@@ -1,0 +1,18 @@
+
+.footer {
+	grid-area: footer;
+	background-color: white;
+		&__container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&__img {
+			width: 35px;
+		}
+
+		&__text {
+		}
+}
+

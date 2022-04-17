@@ -5,23 +5,14 @@
 	line-height: 40px;
 	grid-area: nav;
 	background-color: yellow;
-}
-
-.nav {
-	margin-top: 10px;
-	font-size: 30px;
-	padding: 15px;
-	line-height: 40px;
-	grid-area: nav;
-	background-color: yellow;
 	&__item {
 		font-weight: bold;
 			a {
 				color: black;
 			}
-		&_active {
+		&_hover {
 			&:hover a {
-				color: green;
+				color: gray;
 			}
 		}
 	}

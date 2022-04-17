@@ -7,7 +7,7 @@ import Wallpaper from './Wallpaper/Wallpaper';
 
 const Profile = () => {
 	return (
-		<div className={s.content}>
+		<div>
 			<Wallpaper />
 			<div className={s.content__infoWrapper}>
 				<Avatar />
