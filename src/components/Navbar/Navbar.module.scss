@@ -1,9 +1,10 @@
 .nav {
+	grid-area: nav;
 	margin-top: 10px;
 	font-size: 30px;
 	padding: 15px;
 	line-height: 40px;
-	grid-area: nav;
+
 	background-color: yellow;
 	&__item {
 		font-weight: bold;
@@ -13,6 +14,11 @@
 		&_hover {
 			&:hover a {
 				color: gray;
+			}
+		}
+		&_active {
+			&:active a {
+				color: green;
 			}
 		}
 	}

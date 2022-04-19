@@ -1,1 +1,36 @@
 
+.content {
+	display: grid;
+	grid-template-columns: 2fr 8fr;
+	gap: 20px;
+	padding: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	height: calc(100vh - 95px);
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		&__dialogs {
+
+		}
+
+		&__dialog {
+			padding: 20px 0px;
+			border-right: 1px solid black;
+			&_active {
+				font-size: 30px;
+				font-weight: bold;
+				color: salmon;
+			}
+		}
+
+		&__messages {
+		}
+
+		&__message {
+			padding: 20px 0px;
+			&_active {
+				font-size: 30px;
+				font-weight: bold;
+				color: salmon;
+			}
+		}
+}
