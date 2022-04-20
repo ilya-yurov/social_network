@@ -1,0 +1,10 @@
+.content {
+	&__description {
+		font-size: 25px;
+		p:first-child {
+			font-size: 30px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+	}
+}
