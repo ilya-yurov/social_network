@@ -1,5 +1,6 @@
 import Dialog from './Dialog/Dialog'
 import s from './Dialogs.module.scss'
+import InputDialog from './InputDialog/InputDialog'
 import Message from './Message/Message'
 
 const Dialogs = (props) => {
@@ -9,14 +10,17 @@ const Dialogs = (props) => {
 
 
 	return (
-		<div className={s.content}>
-			<div className={s.content__dialogs}>
-				{dialogElements}
+			<div className={s.wrapper}>
+				<div className={s.content}>
+					<div className={s.content__dialogs}>
+						{dialogElements}
+					</div>
+					<div className={s.content__messages}>
+						{messageElements}
+					</div>
+				</div>
+				{<InputDialog newDialogText={props.newDialogText} updateDialogText={props.updateDialogText} />}
 			</div>
-			<div className={s.content__messages}>
-				{messageElements}
-			</div>
-		</div>
 	)
 }
 

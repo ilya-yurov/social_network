@@ -1,0 +1,39 @@
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+		&__formInput {
+			border-radius: 10px;
+			border: 3px solid black;
+			width: calc(100% - 200px);
+			height: 200px;
+			margin-left: 50px;
+			
+			overflow: hidden;
+			textarea {
+				resize: none;
+				display: block;
+				overflow: hidden;
+				min-width: 100%;
+				min-height: 100%;
+				background-color: wheat;
+				padding: 10px;
+				font-size: 25px;
+			}
+		}
+		&__formButton {
+			align-self: flex-end;
+			width: calc(100% - 200px);
+			margin-left: 50px;
+			
+			button {
+				margin-top: 10px;
+				float: right;
+				border-radius: 20px;
+				font-size: 25px;
+				color: #fff;
+				background-color: green;
+				min-width: 100px;
+			}
+		}
+}

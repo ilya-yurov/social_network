@@ -9,9 +9,21 @@
 	}
 	&_active {
 		a {
+			display: inline-block;
 			font-size: 30px;
 			font-weight: bold;
 			color: salmon;
+			&:after {
+				content: "";
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 10px;
+				width: 10px;
+				height: 10px;
+				margin-right: 10px;
+				background-color: green;
+				border-radius: 50%;
+			}
 		}
 	}
 }

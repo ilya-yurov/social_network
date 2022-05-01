@@ -1,0 +1,15 @@
+.friends {
+	&__header {
+		color: green;
+		text-align: center;
+	}
+
+	&__profiles {
+		margin-top: 20px;
+		display: grid;
+		grid-template-rows: repeat(4,1fr);
+		grid-template-columns: repeat(3, 1fr);
+		gap: 10px;
+		justify-items: center;
+	}
+}

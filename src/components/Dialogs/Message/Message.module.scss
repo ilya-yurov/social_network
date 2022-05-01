@@ -1,9 +1,15 @@
 
 .message {
 	padding: 20px 0px;
+	margin-left: 50px;
+
+
+
 	&_active {
+		margin-left: 0px;
 		font-size: 30px;
 		font-weight: bold;
 		color: salmon;
 	}
 }
+
