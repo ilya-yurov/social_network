@@ -1,13 +1,13 @@
-import { rerenderEntireTree } from "..";
-
-let state = {
-	posts: [
-		{message: "Hello, that's my first try of props usage!", id: 1, likes: "10"},
-		{message: "I wanna have 99 likes at this post!", id: 2, likes: "99"},
-		{message: "OMG he did it!!!", id: 3, likes: "999"}
-	],
-	newPostText: '',
-	newDialogText: 'Hi!',
+export let state = {
+	profilePage: {
+		posts: [
+			{message: "Hello, that's my first try of props usage!", id: 1, likes: "10"},
+			{message: "I wanna have 99 likes at this post!", id: 2, likes: "99"},
+			{message: "OMG he did it!!!", id: 3, likes: "999"}
+		],
+		newPostText: '',
+		newDialogText: '',
+	},
 	dialogs: [
 		{name: 'Victor', id: 1, active: 0},
 		{name: 'Nadya', id: 2, active: 0},
@@ -42,18 +42,27 @@ let state = {
 	]
 };
 
-export let addPost = (newPost) => {
-	state.posts.push({message: newPost, id: 4, likes: 0});
+let  rerenderEntireTree = () => {
+	console.log('State changed');
+}
+
+
+export const rerender = (observer) => {
+	rerenderEntireTree = observer;
+}
+
+export const addPost = (newPost) => {
+	state.profilePage.posts.push({message: newPost, id: 4, likes: 0});
 	rerenderEntireTree(state);
 };
 
-export let updateNewPostText = (newText) => {
-	state.newPostText = newText;
+export const updateNewPostText = (newText) => {
+	state.profilePage.newPostText = newText;
 	rerenderEntireTree(state);
 }
-export let updateDialogText = (newText) => {
+export const updateDialogText = (newText) => {
 	state.newDialogText = newText;
 	rerenderEntireTree(state);
 }
 
-export default state;
+/* export default state; */

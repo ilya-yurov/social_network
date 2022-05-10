@@ -16,7 +16,7 @@ const App = (props) => {			//тег <App/>
 			<div className='app-wrapper__content'>
 				<Routes>
 					<Route path='/dialogs/*' element={<Dialogs dialogs={props.state.dialogs} messages={props.state.messages} newDialogText={props.state.newDialogText} updateDialogText={props.updateDialogText}/>}/>
-					<Route path='/profile/*' element={<Profile posts={props.state.posts} addPost={props.addPost} newPostText={props.state.newPostText} updateNewPostText={props.updateNewPostText} />}/>
+					<Route path='/profile/*' element={<Profile posts={props.state.profilePage.posts} addPost={props.addPost} newPostText={props.state.profilePage.newPostText} updateNewPostText={props.updateNewPostText} />}/>
 				</Routes>
 			</div>
 				<Footer />
@@ -24,6 +24,7 @@ const App = (props) => {			//тег <App/>
 		</BrowserRouter>
 	);
 }
+
 //? Странно, но почему-то компоненту в camelCase не хочет вызывать как тег
 
 export default App;
