@@ -12,6 +12,7 @@ const Input = (props) => {
 	let updateNewText = () => {
 		let text = newPostElement.current.value;
 		props.updateNewPostText(text);
+		debugger;
 	}
 	return (
 		<div className={s.content}>
