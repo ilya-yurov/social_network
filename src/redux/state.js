@@ -45,22 +45,29 @@ export let store = {
 	rerenderEntireTree() {
 		console.log('State changed');
 	},
+
+	getState() {
+		return this._state;
+	},
 	rerender(observer) {
 		this.rerenderEntireTree = observer;
 	},
-	addPost(newPost) {
-		this._state.profilePage.posts.push({message: newPost, id: 4, likes: 0});
-		this.rerenderEntireTree(this.getState());
+
+	dispatch(action) {
+		if (action.type === 'ADD-POST')
+		{
+			this._state.profilePage.posts.push({message: action.newPost, id: 4, likes: 0});
+			this.rerenderEntireTree(this.getState());
+		} 
+		else if (action.type === 'UPDATE-NEW-POST-TEXT')
+		{
+			this._state.profilePage.newPostText = action.newText;
+			this.rerenderEntireTree(this.getState());
+		}
+		else if (action.type === 'UPDATE-DIALOG-TEXT')
+		{
+			this._state.profilePage.newDialogText = action.newText;
+			this.rerenderEntireTree(this.getState());
+		}
 	},
-	updateNewPostText(newText) {
-		this._state.profilePage.newPostText = newText;
-		this.rerenderEntireTree(this.getState());
-	},
-	updateDialogText(newText) {
-		this._state.profilePage.newDialogText = newText;
-		this.rerenderEntireTree(this.getState());
-	},
-	getState() {
-		return this._state;
-	}
 };	

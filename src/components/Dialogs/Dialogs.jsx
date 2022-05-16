@@ -19,7 +19,7 @@ const Dialogs = (props) => {
 						{messageElements}
 					</div>
 				</div>
-				{<InputDialog newDialogText={props.newDialogText} updateDialogText={props.updateDialogText} />}
+				{<InputDialog newDialogText={props.newDialogText} dispatch={props.dispatch} />}
 			</div>
 	)
 }

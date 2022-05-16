@@ -7,7 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 
 
-const App = (props) => {			//тег <App/>
+const App = (props) => {
 	return (
 		<BrowserRouter>
 			<div className='app-wrapper'>
@@ -15,8 +15,8 @@ const App = (props) => {			//тег <App/>
 				<Navbar state={props.state.sidebar}/>
 			<div className='app-wrapper__content'>
 				<Routes>
-					<Route path='/dialogs/*' element={<Dialogs dialogs={props.state.dialogs} messages={props.state.messages} newDialogText={props.state.newDialogText} updateDialogText={props.updateDialogText}/>}/>
-					<Route path='/profile/*' element={<Profile posts={props.state.profilePage.posts} addPost={props.addPost} newPostText={props.state.profilePage.newPostText} updateNewPostText={props.updateNewPostText} />}/>
+					<Route path='/dialogs/*' element={<Dialogs dialogs={props.state.dialogs} messages={props.state.messages} newDialogText={props.state.profilePage.newDialogText} dispatch={props.dispatch}/>}/>
+					<Route path='/profile/*' element={<Profile posts={props.state.profilePage.posts} newPostText={props.state.profilePage.newPostText} dispatch={props.dispatch}/>}/>
 				</Routes>
 			</div>
 				<Footer />
@@ -24,7 +24,5 @@ const App = (props) => {			//тег <App/>
 		</BrowserRouter>
 	);
 }
-
-//? Странно, но почему-то компоненту в camelCase не хочет вызывать как тег
 
 export default App;

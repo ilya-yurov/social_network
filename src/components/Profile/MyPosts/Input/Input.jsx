@@ -6,12 +6,12 @@ const Input = (props) => {
 	let newPostElement = React.useRef();
 	let addNewPost = () => {
 		let text = newPostElement.current.value;
-		props.addPost(text);
-		props.updateNewPostText("");
+		props.dispatch({type: 'ADD-POST', newPost: text});
+		props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: ''});
 	}
 	let updateNewText = () => {
 		let text = newPostElement.current.value;
-		props.updateNewPostText(text);
+		props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});
 		debugger;
 	}
 	return (

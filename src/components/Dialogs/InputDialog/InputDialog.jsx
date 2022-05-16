@@ -2,21 +2,19 @@ import React from 'react';
 import s from './InputDialog.module.scss'
 
 const InputDialog = (props) => {
-
 let newPostElement = React.useRef();
 let sendMessage = () => {
 	let text = newPostElement.current.value;
 	alert(text);
-	props.updateDialogText("");
+	props.dispatch({type: 'UPDATE-DIALOG-TEXT', newText: ''});
 };
 
 let newMessageText = () => {
 	let text = newPostElement.current.value;
 	console.log(text);
-	props.updateDialogText(text);
-	debugger;
+	props.dispatch({type: 'UPDATE-DIALOG-TEXT', newText: text});
 }
-
+	debugger;
 	return (
 		<div>
 			<div className={s.content__formInput}>
