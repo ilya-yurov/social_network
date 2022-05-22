@@ -1,6 +1,6 @@
 import Dialog from './Dialog/Dialog'
 import s from './Dialogs.module.scss'
-import InputDialog from './InputDialog/InputDialog'
+import InputDialogContainer from './InputDialog/InputDialogContainer'
 import Message from './Message/Message'
 
 const Dialogs = (props) => {
@@ -19,7 +19,7 @@ const Dialogs = (props) => {
 						{messageElements}
 					</div>
 				</div>
-				{<InputDialog newDialogText={props.newDialogText} dispatch={props.dispatch} />}
+				{<InputDialogContainer store={props.store} />}
 			</div>
 	)
 }

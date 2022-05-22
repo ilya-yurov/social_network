@@ -1,25 +1,24 @@
 import React from 'react';
-import { sendMessageActionCreator, updateDialogTextActionCreator } from '../../../redux/dialogsReducer';
 import s from './InputDialog.module.scss'
 
 
 const InputDialog = (props) => {
 // e - event
-let sendMessage = (e) => {
-	props.dispatch(sendMessageActionCreator());
+let onSendMessage = (e) => {
+	props.onSendMessage();
 };
 
-let newMessageText = (e) => {
+let onNewMessageText = (e) => {
 	let text = e.target.value;
-	props.dispatch(updateDialogTextActionCreator(text));
+	props.onNewMessageText(text);
 }
 	return (
 		<div>
 			<div className={s.content__formInput}>
-				<textarea onChange={newMessageText}  placeholder='Type your message...' value={props.newDialogText}></textarea>
+				<textarea onChange={onNewMessageText}  placeholder='Type your message...' value={props.newDialogText}></textarea>
 			</div>
 			<div className={s.content__formButton}>
-				{<button onClick={sendMessage}>Send</button>}
+				{<button onClick={onSendMessage}>Send</button>}
 			</div>
 		</div>
 	)
