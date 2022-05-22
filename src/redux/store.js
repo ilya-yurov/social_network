@@ -53,7 +53,7 @@ export let store =
 			{name: 'Sasha', id: 4},
 		]
 	},
-	rerenderEntireTree() 
+	__callSubscribers() 
 	{
 		console.log('State changed');
 	},
@@ -62,9 +62,9 @@ export let store =
 	{
 		return this._state;
 	},
-	rerender(observer) 
+	subscribe(observer) 
 	{
-		this.rerenderEntireTree = observer;
+		this._callSubscribers = observer;
 	},
 
 	dispatch(action) 
@@ -72,6 +72,6 @@ export let store =
 			this._state.profilePage = profileReducer(this._state.profilePage, action);
 			this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
 			this._state.sidebar = sidebarReducer(this._state.sidebar, action);
-			this.rerenderEntireTree(this.getState());
+			this._callSubscribers(this.getState());
 	},
 };	

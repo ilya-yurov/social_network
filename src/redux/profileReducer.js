@@ -2,7 +2,17 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
-const profileReducer = (state, action) => 
+let initialState = 
+{
+	posts: [
+		{message: "Hello, that's my first try of props usage!", id: 1, likes: "10"},
+		{message: "I wanna have 99 likes at store post!", id: 2, likes: "99"},
+		{message: "OMG he did it!!!", id: 3, likes: "999"}
+	],
+	newPostText: '',
+}
+
+const profileReducer = (state = initialState, action) => 
 {
 	switch (action.type)
 	{
