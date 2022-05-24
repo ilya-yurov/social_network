@@ -10,7 +10,7 @@ const MyPosts = (props) => {
 		<div>
 			<div className={s.content__formWrapper}>
 				<Header />
-				<InputContainer store={props.store}/>
+				<InputContainer/>
 			</div>
 			<div className={s.content__postWrapper}>
 				{postElements}
