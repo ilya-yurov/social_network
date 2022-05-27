@@ -1,13 +1,13 @@
-import MyPosts from './MyPosts/MyPosts';
 import Wallpaper from './Wallpaper/Wallpaper';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 
 const Profile = (props) => {
 	return (
 		<div>
-			<Wallpaper />
+			<Wallpaper/>
 			<ProfileInfo/>
-			<MyPosts posts={props.posts} store={props.store} />
+			<MyPostsContainer/>
 		</div>
 	);
 }

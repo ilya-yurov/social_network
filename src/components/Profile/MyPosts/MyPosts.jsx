@@ -1,6 +1,5 @@
 import Header from './Header/Header';
 import Input from './Input/Input';
-import InputContainer from './Input/InputContainer';
 import s from './MyPosts.module.scss'
 import Post from './Post/Post';
 
@@ -10,7 +9,7 @@ const MyPosts = (props) => {
 		<div>
 			<div className={s.content__formWrapper}>
 				<Header />
-				<InputContainer/>
+				<Input onAddNewPost={props.onAddNewPost} onUpdateNewPostText={props.onUpdateNewPostText} newPostText={props.newPostText}/>
 			</div>
 			<div className={s.content__postWrapper}>
 				{postElements}

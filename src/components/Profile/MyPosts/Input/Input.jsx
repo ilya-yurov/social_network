@@ -5,7 +5,7 @@ const Input = (props) => {
 	let newPostElement = React.useRef();
 	let onAddNewPost = () => {
 		let text = newPostElement.current.value;
-		props.onAddNewPost(text);
+		props.onAddNewPost();
 		props.onUpdateNewPostText('');
 	}
 	let onUpdateNewPostText = () => {
