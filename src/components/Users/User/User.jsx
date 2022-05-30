@@ -1,30 +1,17 @@
 import s from './User.module.scss'
 
 const User = (props) => {
-	let followText = (followState) => {
-		switch (followState)
-		{
-			case true:
-				return 'FOLLOW'
-			case false:
-				return 'UNFOLLOW'
-		}
-	}
-
-	let onFollowChange = () => {
-		debugger;
-		if (props.follow == true)
-			props.onFollowChange(false, props.id);
-		else
-			props.onFollowChange(true, props.id);
-	}
-
+	debugger;
 	return (
 		<div className={s.user}>
 			<div className={s.user__wrapper}>
-				<div className={s.user__avatar}></div>
+				<div className={s.user__avatar}>
+					<img src={props.avatar} alt="img not found" />
+				</div>
 				<div className={s.user__button}>
-					<button onClick={onFollowChange}>{followText(props.follow)}</button>
+					{props.follow
+					? <button onClick={() => {props.onUnFollow(props.id)}}>Unfollow</button>
+					: <button onClick={() => {props.onFollow(props.id)}}>Follow</button>}
 				</div>
 				<div className={s.user__content}>
 					<div className={s.user__name}>{props.userName}</div>

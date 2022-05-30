@@ -17,6 +17,11 @@
 			border-radius: 50%;
 			background-color: #2b303b;
 			grid-area: ava;
+			overflow: hidden;
+			img {
+				max-width: 100px;
+				overflow: hidden;
+			}
 		}
 
 		&__button {
