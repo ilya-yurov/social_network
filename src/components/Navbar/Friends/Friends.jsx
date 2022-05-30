@@ -3,7 +3,7 @@ import Friend from './Friend/Friend';
 import s from './Friends.module.scss'
 
 const Friends = (props) => {
-	let friendsList = props.state.map((p) => <Friend name={p.name} id={p.id} />)
+	let friendsList = props.state.map((p) => <Friend name={p.name} key={p.id} id={p.id} />)
 	return (
 		<div>
 			<div className={s.friends__header}>

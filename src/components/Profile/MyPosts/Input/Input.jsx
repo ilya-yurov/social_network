@@ -6,7 +6,6 @@ const Input = (props) => {
 	let onAddNewPost = () => {
 		let text = newPostElement.current.value;
 		props.onAddNewPost();
-		props.onUpdateNewPostText('');
 	}
 	let onUpdateNewPostText = () => {
 		let text = newPostElement.current.value;
