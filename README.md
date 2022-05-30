@@ -4,4 +4,4 @@ As a teaching aid, I used a course from Dima IT-KAMASUTRA (https://www.youtube.c
 
 ## Components diagram
 
-![11](https://user-images.githubusercontent.com/76982614/167625712-3ff116b9-cd0c-418f-a8d9-4a1ecace08cc.png)
+![18](https://user-images.githubusercontent.com/76982614/170695053-23ebc1c2-d4be-46a6-bdd5-3cda620effe6.png)
