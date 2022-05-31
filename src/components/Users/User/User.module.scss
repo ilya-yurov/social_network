@@ -19,23 +19,37 @@
 			grid-area: ava;
 			overflow: hidden;
 			img {
-				max-width: 100px;
-				overflow: hidden;
+				width: 100%;
 			}
 		}
 
 		&__button {
 			margin: 0px auto;
 			grid-area: but;
-			button {
-				border-radius: 20px;
-				font-size: 15px;
-				font-weight: bold;
-				color: #fff;
-				background-color: green;
-				min-width: 100px;
-				min-height: 100%;
+			&_unfollow {
+				button {
+					border-radius: 20px;
+					font-size: 15px;
+					font-weight: bold;
+					color: #fff;
+					background-color: red;
+					min-width: 100px;
+					min-height: 100%;
+				}
 			}
+	
+			&_follow {
+				button {
+					border-radius: 20px;
+					font-size: 15px;
+					font-weight: bold;
+					color: #fff;
+					background-color: green;
+					min-width: 100px;
+					min-height: 100%;
+				}
+			}
+
 		}
 
 		&__content {
@@ -44,7 +58,7 @@
 			padding: 10px;
 			grid-area: cont;
 			display: grid;
-			grid-template-columns: 500px 1fr;
+			grid-template-columns: 500px 180px;
 			grid-template-areas: 
 			"name location"
 			"description location";
@@ -76,8 +90,11 @@
 		}
 
 		&__country {
+
 		}
 
 		&__city {
+			margin-top: 10px;
 		}
 }
+

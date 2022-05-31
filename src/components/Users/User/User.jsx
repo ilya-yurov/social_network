@@ -6,19 +6,19 @@ const User = (props) => {
 		<div className={s.user}>
 			<div className={s.user__wrapper}>
 				<div className={s.user__avatar}>
-					<img src={props.avatar} alt="img not found" />
+					<img src={props.avatar} />
 				</div>
 				<div className={s.user__button}>
 					{props.follow
-					? <button onClick={() => {props.onUnFollow(props.id)}}>Unfollow</button>
-					: <button onClick={() => {props.onFollow(props.id)}}>Follow</button>}
+					? <div className={s.user__button_unfollow}><button  onClick={() => {props.onUnFollow(props.id)}}>Unfollow</button></div>
+					: <div className={s.user__button_follow}><button onClick={() => {props.onFollow(props.id)}}>Follow</button></div>}
 				</div>
 				<div className={s.user__content}>
 					<div className={s.user__name}>{props.userName}</div>
 					<div className={s.user__status}>{props.status}</div>
 					<div className={s.user__location}>
-						<div className={s.user__country}>{props.location.country},</div> 
-						<div className={s.user__city}>{props.location.city}</div>
+						<div className={s.user__country}>{'props.location.country'},</div> 
+						<div className={s.user__city}>{'props.location.city'}</div>
 					</div>
 				</div>
 			</div>
