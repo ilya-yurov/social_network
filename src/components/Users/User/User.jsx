@@ -1,7 +1,6 @@
 import s from './User.module.scss'
 
 const User = (props) => {
-	debugger;
 	return (
 		<div className={s.user}>
 			<div className={s.user__wrapper}>
