@@ -9,7 +9,7 @@ const MyPosts = (props) => {
 		<div>
 			<div className={s.content__formWrapper}>
 				<Header />
-				<Input onAddNewPost={props.onAddNewPost} onUpdateNewPostText={props.onUpdateNewPostText} newPostText={props.newPostText}/>
+				<Input onAddNewPost={props.addPost} onUpdateNewPostText={props.updateNewPostText} newPostText={props.newPostText}/>
 			</div>
 			<div className={s.content__postWrapper}>
 				{postElements}

@@ -16,7 +16,7 @@ const Dialogs = (props) => {
 						{messageElements}
 					</div>
 				</div>
-				<InputDialog onSendMessage={props.onSendMessage} onNewMessageText={props.onNewMessageText} newDialogText={props.newDialogText}/>
+				<InputDialog onSendMessage={props.sendMessage} onNewMessageText={props.updateDialogText} newDialogText={props.newDialogText}/>
 			</div>
 	)
 }
