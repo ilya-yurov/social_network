@@ -20,6 +20,7 @@ const usersReducer = (state = initialState, action) =>
 	{
 		case FOLLOW:
 		{
+			debugger;
 			return {
 				...state,
 				users: state.users.map(u => {
@@ -32,6 +33,7 @@ const usersReducer = (state = initialState, action) =>
 		}
 		case UNFOLLOW:
 		{
+			debugger;
 			return {
 				...state,
 				users: state.users.map(u => {
