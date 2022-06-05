@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import s from './User.module.scss'
 
 const User = (props) => {
@@ -5,7 +6,9 @@ const User = (props) => {
 		<div className={s.user}>
 			<div className={s.user__wrapper}>
 				<div className={s.user__avatar}>
-					<img src={props.avatar} />
+					<NavLink to={'/profile/' + props.id}>
+						<img src={props.avatar} />
+					</NavLink>
 				</div>
 				<div className={s.user__button}>
 					{props.follow

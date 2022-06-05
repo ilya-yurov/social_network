@@ -2,11 +2,11 @@ import Avatar from "./Avatar/Avatar"
 import Description from "./Description/Description"
 import s from "./ProfileInfo.module.scss"
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
 	return (
 		<div className={s.content__infoWrapper}>
-			<Avatar />
-			<Description />
+			<Avatar photo={props.profile.photos.large}/>
+			<Description info={props.profile}/>
 		</div>
 	)
 }
