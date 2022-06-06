@@ -12,15 +12,7 @@ let initialState = {
 			{name: 'Petya', id: 6, active: 0},
 			{name: 'Valentina', id: 7, active: 0}
 		],
-		messages: [
-			{message: 'Hi there!', id: 1, active: 0},
-			{message: 'How are you?', id: 2, active: 0},
-			{message: 'Wanna walk outside?', id: 3, active: 1},
-			{message: 'I\'m so sad :(', id: 4, active: 0},
-			{message: ':D', id: 5, active: 0},
-			{message: 'Hmm... just ignore you...', id: 6, active: 0},
-			{message: 'Californicaaaaaaation!!!', id: 7, active: 0}
-		],
+		messages: [],
 		newDialogText: '',
 };
 
