@@ -1,14 +1,13 @@
 import axios from 'axios'
 import React from 'react'
 import { connect } from 'react-redux'
-import { follow, setCurrentPage, setTotalUsersCount, setUsers, toggleIsFetching, unfollow } from "../../redux/usersReducer"
+import { follow, setCurrentPage, setTotalUsersCount, setUsers, toggleIsFetching, unfollow } from "../../redux/users-reducer"
 import Preloader from '../common/Preloader'
 import Users from './Users'
 
 class UsersContainer extends React.Component {
 
 	componentDidMount() {
-//		if (this.props.users.length === 0) {
 		this.props.toggleIsFetching(true);
 		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
 		.then(response => {
@@ -16,7 +15,6 @@ class UsersContainer extends React.Component {
 			this.props.setUsers(response.data.items);
 			this.props.setTotalUsersCount(response.data.totalCount);
 		})
-//		}
 	}
 
 	setCurrentPage = (pageNumber) => 

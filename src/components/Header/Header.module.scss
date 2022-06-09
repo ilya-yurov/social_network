@@ -1,8 +1,44 @@
 .header {
 	grid-area: header;
+	display: grid;
+	grid-template-columns: 67px 1fr;
 	background-color: green;
 	img {
 		max-width: 100%;
 		max-height: 100%;
+	}
+	&__login {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		justify-content: end;
+		font-size: 20px;
+		font-weight: bold;
+		padding-right: 20px;
+		a {
+			color: black;
+			font-size: 20px;
+		}
+	}
+	&__user {
+		
+		display: inline-block;
+		font-size: 20px;
+		&::after {
+			content: '';
+			display: inline-block;
+			margin: 0 0 1px 5px;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: yellow;
+		}
+	}
+	&__avatar {
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		overflow: hidden;
 	}
 }
