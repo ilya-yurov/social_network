@@ -9,7 +9,7 @@ class UsersContainer extends React.Component {
 
 	componentDidMount() {
 		this.props.toggleIsFetching(true);
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`, {withCredentials: true,})
 		.then(response => {
 			this.props.toggleIsFetching(false);
 			this.props.setUsers(response.data.items);
@@ -21,17 +21,50 @@ class UsersContainer extends React.Component {
 	{
 		this.props.setCurrentPage(pageNumber);
 		this.props.toggleIsFetching(true);
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`, {withCredentials: true})
 			.then(response => {
 				this.props.toggleIsFetching(false);
 				this.props.setUsers(response.data.items);
 			})
 	}
 
+	followUser = (userId) => {
+		axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`, {}, 
+		{
+			withCredentials: true,
+			headers: {
+				'API-KEY': '4be4028a-d5f3-47fe-8ba5-3e9bb42ed4d7'
+			}
+		})
+		.then(response => {
+			if(response.data.resultCode === 0) {
+				this.props.follow(userId);
+			} else {
+				console.log(response.data.messages);
+			}
+		})
+	}
+
+	unfollowUser = (userId) => {
+		axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`, {
+			withCredentials: true,
+			headers: {
+				'API-KEY': '4be4028a-d5f3-47fe-8ba5-3e9bb42ed4d7'
+			}
+		})
+		.then(response => {
+			if(response.data.resultCode === 0) {
+				this.props.unfollow(userId);
+			} else {
+				console.log(response.data.messages);
+			}
+		})
+	}
+
 	render = () => {
 		return (
 		<> 
-			{this.props.isFetching ? <Preloader/> : <Users totalUsersCount={this.props.totalUsersCount} pageSize={this.props.pageSize} currentPage={this.props.currentPage} setCurrentPage={this.setCurrentPage} users={this.props.users} follow={this.props.follow} unfollow={this.props.unfollow}/>}
+			{this.props.isFetching ? <Preloader/> : <Users totalUsersCount={this.props.totalUsersCount} pageSize={this.props.pageSize} currentPage={this.props.currentPage} setCurrentPage={this.setCurrentPage} users={this.props.users} follow={this.followUser} unfollow={this.unfollowUser}/>}
 		</>
 		)
 	}
