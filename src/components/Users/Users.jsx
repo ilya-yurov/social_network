@@ -8,7 +8,7 @@ const Users = (props) => {
 	let getUsersElements = () => 
 	{
 		let userElements = props.users.map((u) => {
-		return (<User onFollow={props.follow} onUnFollow={props.unfollow} avatar={u.photos.small != null ? u.photos.small : userPhoto} id={u.id} follow={u.followed} userName={u.name} status={u.status} key={u.id} />)
+		return (<User isFollowing={u.isFollowing} onFollow={props.follow} onUnFollow={props.unfollow} avatar={u.photos.small != null ? u.photos.small : userPhoto} id={u.id} follow={u.followed} userName={u.name} status={u.status} key={u.id} />)
 	});
 		return userElements;
 	}

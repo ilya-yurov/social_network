@@ -2,21 +2,20 @@ import Header from './Header';
 import React from 'react';
 import {setAuthUserData, setUserPhoto} from '../../redux/auth-reducer';
 import {connect} from 'react-redux';
-import axios from 'axios';
 import defaultUserPhoto from '../../assets/images/avatar.webp'
-
+import { authAPI, profileAPI } from '../../api/api';
 
 class HeaderContainer extends React.Component {
 
 	componentDidMount() {
-		axios.get('https://social-network.samuraijs.com/api/1.0/auth/me', {withCredentials: true})
-		.then(response => {
-			if (response.data.resultCode === 0) {
-				let {email, id, login} = response.data.data;
+		authAPI.isAuth()
+		.then(data => {
+			if (data.resultCode === 0) {
+				let {email, id, login} = data.data;
 				this.props.setAuthUserData(id, email, login);
-				axios.get(`https://social-network.samuraijs.com/api/1.0//profile/${this.props.id}`)
-				.then(response => {
-						let {small, large} = response.data.photos;
+				profileAPI.getUserProfile(this.props.id)
+				.then(data => {
+						let {small, large} = data.photos;
 						if (small === null)
 							small = defaultUserPhoto;
 						if (large === null)
