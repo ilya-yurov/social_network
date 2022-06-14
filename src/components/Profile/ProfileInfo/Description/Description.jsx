@@ -5,7 +5,6 @@ import no from '../../../../assets/images/profile/no.webp'
 
 
 const Description = (props) => {
-	debugger;
 	return (
 		<div className={s.content__description}>
 			<p>{props.info.fullName}</p>
