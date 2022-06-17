@@ -1,0 +1,14 @@
+.status {
+	font-size: 25px;
+	&__input {
+		margin: 5px 0 5px 0;
+		input{
+			font-size: 25px;
+			background-color: #f5deb3;
+			border: 2px solid black;
+			border-radius: 10px;
+			padding: 3px;
+		}
+	}
+}
+

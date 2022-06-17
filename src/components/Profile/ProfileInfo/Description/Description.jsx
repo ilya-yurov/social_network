@@ -1,6 +1,7 @@
 import s from './Description.module.scss'
 import yes from '../../../../assets/images/profile/yes_job.png'
 import no from '../../../../assets/images/profile/no.webp'
+import ProfileStatus from '../../ProfileStatus/ProfileStatus';
 
 
 
@@ -11,6 +12,7 @@ const Description = (props) => {
 			<p>{props.info.aboutMe}</p>
 			<p>Look for a job: {props.info.lookingForAJob ? <img src={yes}/> : <img src={no}/>}</p>
 			<p>Description: {props.info.lookingForAJobDescription}</p>
+			<ProfileStatus status={'Hello my friends!'} />
 			<p>Contacts:</p>
 			<div className={s.content__contacts}>
 				{props.info.contacts.facebook ? <div className={s.content__contact}><span>Facebook:</span> {props.info.contacts.facebook}</div> : null}

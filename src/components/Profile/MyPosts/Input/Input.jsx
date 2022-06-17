@@ -4,7 +4,6 @@ import s from './Input.module.scss'
 const Input = (props) => {
 	let newPostElement = React.useRef();
 	let onAddNewPost = () => {
-		let text = newPostElement.current.value;
 		props.onAddNewPost();
 	}
 	let onUpdateNewPostText = () => {

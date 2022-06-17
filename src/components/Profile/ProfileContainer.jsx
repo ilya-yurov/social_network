@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { setProfile, setUserProfile } from '../../redux/profile-reducer';
-import {useLocation, useNavigate, useParams,} from "react-router-dom";
 import Profile from './Profile';
 import React from 'react';
-import axios from 'axios'
-import { profileAPI } from '../../api/api';
+import { withRouter } from '../../hoc/withRouter';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
 class ProfileContainer extends React.Component {
 	componentDidMount = () => {
@@ -20,23 +20,13 @@ class ProfileContainer extends React.Component {
 	}
 }
 
-let withRouter = (Component) => {
-	let ComponentWithRouterProp = (props) => {
-		let location = useLocation();   //in router v6 in class comps we must use hooks
-		let navigate = useNavigate();
-		let params = useParams();
-		return (
-			<Component
-				{...props}
-				router={{ location, navigate, params }}
-			/>
-		);
-	}
-	return ComponentWithRouterProp;
-}
-
 let mapStateToProps = (state) => ({
 	profile: state.profilePage.profile,
 	myProfile: state.profilePage.myProfile
 })
-export default connect(mapStateToProps, {setProfile})(withRouter(ProfileContainer))
+
+export default compose(
+	connect(mapStateToProps, {setProfile}),
+	withRouter,
+	withAuthRedirect
+)(ProfileContainer)

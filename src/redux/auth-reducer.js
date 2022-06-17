@@ -23,12 +23,10 @@ const authReducer = (state = initialState, action) =>
 	{
 		case SET_USER_DATA:
 		{
-			debugger;
 			return {...state, ...action.data, isAuth: true};
 		}
 		case SET_USER_PHOTO:
 		{
-			debugger;
 			return {...state, ...action.photos};
 		}
 		default:
@@ -43,7 +41,6 @@ export const isUserAuth = () => (dispatch) => {
 	authAPI.isAuth()
 	.then(data => {
 		if (data.resultCode === 0) {
-			debugger;
 			let {email, id, login} = data.data;
 			console.log(email, login, id);
 			dispatch(setAuthUserData(id, email, login));
@@ -52,7 +49,6 @@ export const isUserAuth = () => (dispatch) => {
 }
 
 export const getUserProfile = (userId) => (dispatch) => {
-	debugger;
 	if (userId) {
 		profileAPI.getUserProfile(userId)
 		.then(data => {
