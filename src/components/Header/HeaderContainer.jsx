@@ -7,13 +7,12 @@ class HeaderContainer extends React.Component {
 
 	componentDidMount() {
 		this.props.isUserAuth();
+		this.props.getUserProfile(this.props.id);
 	}
 
-
 	render() {
-		if (this.props.isAuth) {
-			this.props.getUserProfile(this.props.id);
-		}
+		if(!this.props.isPhotoUpdate)
+			this.props.getUserProfile(this.props.id)
 		return <Header {...this.props} />
 	}
 }
@@ -25,6 +24,7 @@ let mapStateToProps = (state) => {
 			login: state.auth.login,
 			id: state.auth.id,
 			photos: state.auth.photos,
+			isPhotoUpdate: state.auth.isPhotoUpdate
 		}
 	)
 }

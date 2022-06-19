@@ -14,7 +14,8 @@ let initialState =
 	email: null,
 	login: null,
 	isAuth: false,
-	photos: {small: null, large: null}
+	photos: {small: null, large: null},
+	isPhotoUpdate: false
 };
 
 const authReducer = (state = initialState, action) => 
@@ -27,7 +28,7 @@ const authReducer = (state = initialState, action) =>
 		}
 		case SET_USER_PHOTO:
 		{
-			return {...state, ...action.photos};
+			return {...state, ...action.photos, isPhotoUpdate: true };
 		}
 		default:
 			return state;
@@ -42,7 +43,6 @@ export const isUserAuth = () => (dispatch) => {
 	.then(data => {
 		if (data.resultCode === 0) {
 			let {email, id, login} = data.data;
-			console.log(email, login, id);
 			dispatch(setAuthUserData(id, email, login));
 		}
 	})

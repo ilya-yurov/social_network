@@ -12,7 +12,7 @@ const Description = (props) => {
 			<p>{props.info.aboutMe}</p>
 			<p>Look for a job: {props.info.lookingForAJob ? <img src={yes}/> : <img src={no}/>}</p>
 			<p>Description: {props.info.lookingForAJobDescription}</p>
-			<ProfileStatus status={'Hello my friends!'} />
+			<ProfileStatus status={props.status} updateStatus={props.updateStatus} />
 			<p>Contacts:</p>
 			<div className={s.content__contacts}>
 				{props.info.contacts.facebook ? <div className={s.content__contact}><span>Facebook:</span> {props.info.contacts.facebook}</div> : null}

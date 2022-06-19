@@ -113,7 +113,7 @@ export const followUser = (userId) => (dispatch) => {
 		if(data.resultCode === 0) {
 			dispatch(follow(userId));
 		} else {
-			console.log(data.messages);
+			console.error(data.messages);
 		}
 		dispatch(toggleIsFollowingProgress(false, userId));
 	})
@@ -125,7 +125,7 @@ export const unfollowUser = (userId) => (dispatch) => {
 		if(data.resultCode === 0) {
 			dispatch(unfollow(userId));
 		} else {
-			console.log(data.messages);
+			console.error(data.messages);
 		}
 		dispatch(toggleIsFollowingProgress(false, userId));
 	})
