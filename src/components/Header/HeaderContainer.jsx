@@ -10,9 +10,12 @@ class HeaderContainer extends React.Component {
 		this.props.getUserProfile(this.props.id);
 	}
 
-	render() {
+	componentDidUpdate = (prevProps, prevState) => {
 		if(!this.props.isPhotoUpdate)
 			this.props.getUserProfile(this.props.id)
+	}
+
+	render() {
 		return <Header {...this.props} />
 	}
 }

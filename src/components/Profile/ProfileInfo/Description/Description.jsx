@@ -9,11 +9,11 @@ const Description = (props) => {
 	return (
 		<div className={s.content__description}>
 			<p>{props.info.fullName}</p>
-			<p>{props.info.aboutMe}</p>
-			<p>Look for a job: {props.info.lookingForAJob ? <img src={yes}/> : <img src={no}/>}</p>
-			<p>Description: {props.info.lookingForAJobDescription}</p>
+			{!props.info.aboutMe ? <p><span className={s.content__aboutMe}>About me:</span> no information</p> : <p><span className={s.content__aboutMe}>About me:</span> {props.info.aboutMe}</p> }
+			<p><span className={s.content__aboutMe}>Look for a job:</span> {props.info.lookingForAJob ? <img src={yes}/> : <img src={no}/>}</p>
+			<p><span className={s.content__aboutMe}>Description:</span> {props.info.lookingForAJobDescription}</p>
 			<ProfileStatus status={props.status} updateStatus={props.updateStatus} />
-			<p>Contacts:</p>
+			<p><span className={s.content__aboutMe}>Contacts:</span></p>
 			<div className={s.content__contacts}>
 				{props.info.contacts.facebook ? <div className={s.content__contact}><span>Facebook:</span> {props.info.contacts.facebook}</div> : null}
 				{props.info.contacts.website ? <div className={s.content__contact}><span>Website:</span> {props.info.contacts.website}</div> : null}

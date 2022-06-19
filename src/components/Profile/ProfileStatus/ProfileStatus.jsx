@@ -3,6 +3,15 @@ import s from './ProfileStatus.module.scss'
 
 class ProfileStatus extends React.Component {
 
+	componentDidUpdate = (prevProps, prevState) => {
+		if (prevProps.status != this.props.status) {
+			this.setState({
+				status: this.props.status
+			})
+		}
+	}
+
+
 	state = {
 		editMode: false,
 		status: this.props.status
@@ -30,13 +39,13 @@ class ProfileStatus extends React.Component {
 		return  <div className={s.status}>
 					{!this.state.editMode &&
 						<div className={s.status__data}>
-							<span>Status: </span>
+							<span className={s.status__header}>Status: </span>
 							<span onDoubleClick={this.activateEditMode}>{this.props.status || "Enter your status here."}</span>
 						</div>
 					}
 					{this.state.editMode &&
 						<div className={s.status__input}>
-							<span>Status: </span>
+							<span className={s.status__header}>Status: </span>
 							<input onChange={this.onStatusChange} autoFocus={true} onBlur={this.deactivateEditMode} value={this.state.status} />
 						</div>
 					}

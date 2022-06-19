@@ -17,6 +17,9 @@
 		grid-template-columns: repeat(2, 1fr);
 		gap: 20px;
 	}
+	&__aboutMe {
+		font-weight: bold;
+	}
 
 	&__contact {
 		font-style: italic;
