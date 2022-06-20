@@ -61,4 +61,20 @@ export const getUserProfile = (userId) => (dispatch) => {
 		})
 	}
 }
+
+export const loginUser = (email, password, rememberMe) => (dispatch) => {
+	authAPI.login(email, password, rememberMe)
+	.then(data => {
+		if (data.resultCode === 0) {
+			authAPI.isAuth()
+			.then(data => {
+				if (data.resultCode === 0) {
+					let {email, id, login} = data.data;
+					dispatch(setAuthUserData(id, email, login));
+				}
+			})
+		}
+	})
+}
+
 export default authReducer;
