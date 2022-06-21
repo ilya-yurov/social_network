@@ -53,5 +53,5 @@ export default compose(
 					mapStateToProps,
 					{follow, unfollow, getUsers, followUser, unfollowUser}
 				),
-				/* withAuthRedirect */
+				withAuthRedirect
 				)(UsersContainer)

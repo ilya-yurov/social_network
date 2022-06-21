@@ -1,25 +1,31 @@
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 import s from './InputDialog.module.scss'
 
-
-const InputDialog = (props) => {
-// e - event
-let onSendMessage = (e) => {
-	props.onSendMessage();
-};
-
-let onNewMessageText = (e) => {
-	let text = e.target.value;
-	props.onNewMessageText(text);
-}
+const InputDialogForm = (props) => {
 	return (
-		<div>
+		<form className={s.content} onSubmit={props.handleSubmit}>
 			<div className={s.content__formInput}>
-				<textarea onChange={onNewMessageText}  placeholder='Type your message...' value={props.newDialogText}></textarea>
+				<Field name='dialogInputBody' component='textarea' placeholder='Type your message...'></Field>
 			</div>
 			<div className={s.content__formButton}>
-				{<button onClick={onSendMessage}>Send</button>}
+				{<button>Send</button>}
 			</div>
+		</form>
+	)
+}
+
+const InputDialogReduxForm = reduxForm({form: 'inputDialog'})(InputDialogForm)
+
+const InputDialog = (props) => {
+
+	const SendMessage = (FormData) => {
+		props.onSendMessage(FormData.dialogInputBody);
+	};
+
+	return (
+		<div>
+			<InputDialogReduxForm onSubmit={SendMessage}/>
 		</div>
 	)
 }

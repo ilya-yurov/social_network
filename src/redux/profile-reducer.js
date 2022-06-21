@@ -13,7 +13,7 @@ let initialState =
 		{message: "I wanna have 99 likes at this post!", id: 2, likes: "99"},
 		{message: "OMG he did it!!!", id: 3, likes: "999"}
 	],
-	newPostText: '',
+/* 	newPostText: '', */
 	profile: null,
 	status: ""
 }
@@ -24,19 +24,10 @@ const profileReducer = (state = initialState, action) =>
 	{
 		case ADD_POST:
 			{
-				{
-					let stateCopy = {...state};
-					stateCopy.posts = [...state.posts];
-					stateCopy.posts.push({message: stateCopy.newPostText, id: 4, likes: 0});
-					stateCopy.newPostText = '';
-					return stateCopy;
+				return {
+					...state, 
+					posts: [...state.posts, {message: action.text, id: 4, likes: 0}]
 				}
-			}
-		case UPDATE_NEW_POST_TEXT:
-			{
-				let stateCopy = {...state};
-				stateCopy.newPostText = action.newText;
-				return stateCopy;
 			}
 		case SET_USER_PROFILE:
 			{
@@ -51,8 +42,7 @@ const profileReducer = (state = initialState, action) =>
 	}
 }
 
-export let addPost = () => ({type: ADD_POST});
-export let updateNewPostText = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
+export let addPost = (text) => ({type: ADD_POST, text});
 export let setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export let setUserStatus = (status) => ({type: SET_USER_STATUS, status});
 

@@ -6,11 +6,11 @@ let mapStateToProps = (state) => {
 	return (
 		{
 			posts: state.profilePage.posts,
-			newPostText: state.profilePage.newPostText
+			/* newPostText: state.profilePage.newPostText */
 		}
 	)
 }
 
 
-const MyPostsContainer = connect(mapStateToProps, {addPost, updateNewPostText})(MyPosts);
+const MyPostsContainer = connect(mapStateToProps, {addPost/* , updateNewPostText */})(MyPosts);
 export default MyPostsContainer;
