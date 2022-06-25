@@ -2,8 +2,24 @@
 	font-size: 20px;
 	font-weight: bold;
 	padding: 20px;
-	form {
-		font-weight: normal;
-		font-size: 15px;
+}
+.content {
+	font-weight: normal;
+	font-size: 15px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	&__checkbox {
+		font-weight: bold;
+		color: #758191;
+	}
+	&__button {
+		button {
+			border-radius: 20px;
+			font-size: 15px;
+			color: #fff;
+			background-color: green;
+			min-width: 60px;
+		}
 	}
 }

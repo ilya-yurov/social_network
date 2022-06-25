@@ -1,0 +1,45 @@
+.content {
+	display: flex;
+	align-items: center;
+	&__formInput {
+		margin-top: 20px;
+		border-radius: 10px;
+		border: 2px solid black;
+		overflow: hidden;
+		grid-area: form;
+		max-width: 300px;
+		overflow-y: auto;
+		input {
+			resize: none;
+			display: block;
+			overflow-y: auto;
+			min-width: 100%;
+			min-height: 100%;
+			background-color: wheat;
+			font-size: 20px;
+		}
+	}
+	&__formError {
+		padding-top: 20px;
+		padding-left: 10px;
+		color: red;
+	}
+	&__formInput_error {
+		margin-top: 20px;
+		border-radius: 10px;
+		border: 2px solid red;
+		overflow: hidden;
+		grid-area: form;
+		max-width: 300px;
+		overflow-y: auto;
+		input {
+			resize: none;
+			display: block;
+			overflow-y: auto;
+			min-width: 100%;
+			min-height: 100%;
+			background-color: wheat;
+			font-size: 20px;
+		}
+	}
+}

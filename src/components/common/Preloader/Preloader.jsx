@@ -1,5 +1,5 @@
 import s from './Preloader.module.scss'
-import userLoader from '../../assets/loaders/users-loader.gif'
+import userLoader from '../../../assets/loaders/users-loader.gif'
 
 const Preloader = () =>
 {

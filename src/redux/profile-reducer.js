@@ -2,7 +2,6 @@ import { profileAPI } from "../api/api";
 
 //Posts consts
 const ADD_POST = 'ADD_POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT'
 const SET_USER_PROFILE = 'SET_USER_PROFILE'
 const SET_USER_STATUS = 'SET_USER_STATUS'
 
@@ -13,7 +12,6 @@ let initialState =
 		{message: "I wanna have 99 likes at this post!", id: 2, likes: "99"},
 		{message: "OMG he did it!!!", id: 3, likes: "999"}
 	],
-/* 	newPostText: '', */
 	profile: null,
 	status: ""
 }

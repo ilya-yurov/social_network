@@ -3,21 +3,26 @@ import s from './Login.module.scss';
 import {connect} from 'react-redux';
 import { loginUser } from '../../redux/auth-reducer';
 import { Navigate } from 'react-router-dom';
+import { Input } from '../common/FormsControls/FormsContols';
+import { maxLengthCreator, required } from '../../utils/validators/validators';
 
+const maxLength50 = maxLengthCreator(50);
 
 const LoginForm = (props) => {
 	return (
-		<form onSubmit={props.handleSubmit}>
-			<div>
-				<Field placeholder={'Login'} name={'login'} component={'input'}/>
+		<form className={s.content} onSubmit={props.handleSubmit}>
+			<div className={s.content__inputs}>
+				<div>
+					<Field placeholder={'Login'} name={'login'} component={Input} validate={[required, maxLength50]}/>
+				</div>
+				<div>
+					<Field placeholder={'Password'} name={'password'} component={Input} validate={[required, maxLength50]}/>
+				</div>
 			</div>
-			<div>
-				<Field placeholder={'Password'} name={'password'} component={'input'}/>
-			</div>
-			<div>
+			<div className={s.content__checkbox}>
 				<Field component={'input'} name={'rememberMe'} type={'checkbox'} /> remember me
 			</div>
-			<div>
+			<div className={s.content__button}>
 				<button>Login</button>
 			</div>
 		</form>

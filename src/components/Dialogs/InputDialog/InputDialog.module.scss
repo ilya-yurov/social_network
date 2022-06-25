@@ -1,4 +1,9 @@
 .content {
+	padding-left: 20px;
+	width: calc(100% - 200px);
+}
+
+/* .content {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
@@ -36,4 +41,4 @@
 				min-width: 100px;
 			}
 		}
-}
+} */
