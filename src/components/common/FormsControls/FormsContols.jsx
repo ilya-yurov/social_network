@@ -3,16 +3,16 @@ import sI from './FormsContolsInput.module.scss'
 
 const FormControl = ({meta, input, buttonText, ...props}) => {
 	const hasError = meta.touched && meta.error;
-	const isTextarea = props.formName == 'Textarea';
-	const isInput =  props.formName == 'Input';
+	const isTextarea = props.formName === 'Textarea';
+	const isInput =  props.formName === 'Input';
 	return (
-			<div className={isTextarea && sT.content || isInput && sI.content}>
+			<div className={(isTextarea && sT.content) || (isInput && sI.content)}>
 				{hasError ?
-					<div className={isTextarea && sT.content__formTextarea_error || isInput && sI.content__formInput_error}>
+					<div className={(isTextarea && sT.content__formTextarea_error) || (isInput && sI.content__formInput_error)}>
 						{props.children}
 					</div>
 					:
-					<div className={isTextarea && sT.content__formTextarea || isInput && sI.content__formInput}>
+					<div className={(isTextarea && sT.content__formTextarea) || (isInput && sI.content__formInput)}>
 						{props.children}
 					</div>
 				}
@@ -20,7 +20,7 @@ const FormControl = ({meta, input, buttonText, ...props}) => {
 				<div className={hasError ? sT.content__formButton_error : sT.content__formButton}>
 					<button>{buttonText}</button>
 				</div>}
-				{hasError && <div className={isTextarea && sT.content__formError || isInput && sI.content__formError}>{meta.error}</div>}
+				{hasError && <div className={(isTextarea && sT.content__formError) || (isInput && sI.content__formError)}>{meta.error}</div>}
 			</div>
 	)
 }
