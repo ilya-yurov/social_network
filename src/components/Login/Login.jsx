@@ -16,7 +16,7 @@ const LoginForm = (props) => {
 					<Field placeholder={'Login'} name={'login'} component={Input} validate={[required, maxLength50]}/>
 				</div>
 				<div>
-					<Field placeholder={'Password'} name={'password'} component={Input} validate={[required, maxLength50]}/>
+					<Field placeholder={'Password'} type={'password'} name={'password'} component={Input} validate={[required, maxLength50]}/>
 				</div>
 			</div>
 			<div className={s.content__checkbox}>

@@ -7,7 +7,7 @@
 		border: 2px solid black;
 		overflow: hidden;
 		grid-area: form;
-		max-width: 300px;
+		min-width: 400px;
 		overflow-y: auto;
 		input {
 			resize: none;
@@ -17,6 +17,7 @@
 			min-height: 100%;
 			background-color: wheat;
 			font-size: 20px;
+			padding: 5px;
 		}
 	}
 	&__formError {
@@ -30,7 +31,7 @@
 		border: 2px solid red;
 		overflow: hidden;
 		grid-area: form;
-		max-width: 300px;
+		min-width: 400px;
 		overflow-y: auto;
 		input {
 			resize: none;
@@ -40,6 +41,7 @@
 			min-height: 100%;
 			background-color: wheat;
 			font-size: 20px;
+			padding: 5px;
 		}
 	}
 }

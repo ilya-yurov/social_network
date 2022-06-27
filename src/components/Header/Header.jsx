@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import unLoginImg from '../../assets/images/header/unLogin.png'
+import logoutImg from '../../assets/images/header/unLogin.png'
 import s from './Header.module.scss'
 
 const Header = (props) => {
@@ -16,8 +16,8 @@ const Header = (props) => {
 					</div>
 					<div className={s.header__user}>{props.login}</div>
 					<div className={s.header__unLogin}>
-						<button onClick={props.unLoginUser}>
-							<img src={unLoginImg}/>
+						<button onClick={props.logoutUser}>
+							<img src={logoutImg}/>
 						</button>
 					</div>
 				</> : 

@@ -15,11 +15,12 @@
 	}
 	&__button {
 		button {
+			padding: 3px;
 			border-radius: 20px;
-			font-size: 15px;
+			font-size: 20px;
 			color: #fff;
 			background-color: green;
-			min-width: 60px;
+			min-width: 80px;
 		}
 	}
 }

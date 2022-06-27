@@ -4,7 +4,7 @@ import defaultUserPhoto from '../assets/images/avatar.webp'
 //Auth consts
 const SET_USER_DATA = 'SET_USER_DATA'
 const SET_USER_PHOTO = 'SET_USER_PHOTO'
-const UNSET_USER_DATA = 'UNSET_USER_DATA'
+const REMOVE_USER_DATA = 'UNSET_USER_DATA'
 
 
 let initialState = 
@@ -27,7 +27,7 @@ const authReducer = (state = initialState, action) =>
 		{
 			return {...state, ...action.data, isAuth: true};
 		}
-		case UNSET_USER_DATA:
+		case REMOVE_USER_DATA:
 		{
 			debugger;
 			return {...state, ...action.data, isAuth: false};
@@ -42,7 +42,7 @@ const authReducer = (state = initialState, action) =>
 }
 
 const setAuthUserData = (id, email, login) => ({type: SET_USER_DATA, data: {id, email, login}});
-const unSetAuthUserData = () => ({type: UNSET_USER_DATA, data: {id:null, email:null, login:null}});
+const removeAuthUserData = () => ({type: REMOVE_USER_DATA, data: {id:null, email:null, login:null}});
 const setUserPhoto = (small, large) => ({type: SET_USER_PHOTO, photos: {photos:{small, large}}});
 
 export const isUserAuth = () => (dispatch) => {
@@ -83,14 +83,16 @@ export const loginUser = (email, password, rememberMe) => (dispatch) => {
 		}
 	})
 }
-export const unLoginUser = () => (dispatch) => {
-	authAPI.unLogin()
+
+
+export const logoutUser = () => (dispatch) => {
+	authAPI.logout()
 	.then(data => {
 		if (data.resultCode === 0) {
 			authAPI.isAuth()
 			.then(data => {
 				if (data.resultCode === 1) {
-					dispatch(unSetAuthUserData());
+					dispatch(removeAuthUserData());
 				}
 			})
 		}
