@@ -46,7 +46,7 @@ const removeAuthUserData = () => ({type: REMOVE_USER_DATA, data: {id:null, email
 const setUserPhoto = (small, large) => ({type: SET_USER_PHOTO, photos: {photos:{small, large}}});
 
 export const isUserAuth = () => (dispatch) => {
-	authAPI.isAuth()
+	return authAPI.isAuth()
 	.then(data => {
 		if (data.resultCode === 0) {
 			let {email, id, login} = data.data;
