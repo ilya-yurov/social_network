@@ -1,7 +1,5 @@
 import { Field, reduxForm } from 'redux-form';
 import s from './Login.module.scss';
-import {connect} from 'react-redux';
-import { loginUser } from '../../redux/auth-reducer';
 import { Navigate } from 'react-router-dom';
 import { Input } from '../common/FormsControls/FormsContols';
 import { maxLengthCreator, required } from '../../utils/validators/validators';
@@ -25,6 +23,9 @@ const LoginForm = (props) => {
 			<div className={s.content__button}>
 				<button>Login</button>
 			</div>
+			<div className={s.content__error}>
+				{props.error}
+			</div>
 		</form>
 	);
 }
@@ -46,12 +47,4 @@ const Login = (props) => {
 	}
 }
 
-let mapStateToProps = (state) => {
-	return (
-		{
-			isAuth: state.auth.isAuth,
-		}
-	)
-}
-
-export default connect(mapStateToProps, {loginUser})(Login)
+export default Login;

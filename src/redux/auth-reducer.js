@@ -1,3 +1,4 @@
+import { stopSubmit } from "redux-form";
 import { authAPI, profileAPI } from "../api/api";
 import defaultUserPhoto from '../assets/images/avatar.webp'
 
@@ -29,7 +30,6 @@ const authReducer = (state = initialState, action) =>
 		}
 		case REMOVE_USER_DATA:
 		{
-			debugger;
 			return {...state, ...action.data, isAuth: false};
 		}
 		case SET_USER_PHOTO:
@@ -80,6 +80,9 @@ export const loginUser = (email, password, rememberMe) => (dispatch) => {
 					dispatch(setAuthUserData(id, email, login));
 				}
 			})
+		} else {
+			let message =  data.messages.length > 0 ? data.messages[0] : 'Some error';
+			dispatch(stopSubmit('login', {_error: message}));
 		}
 	})
 }
