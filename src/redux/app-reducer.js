@@ -1,6 +1,3 @@
-import { stopSubmit } from "redux-form";
-import { authAPI, profileAPI } from "../api/api";
-import defaultUserPhoto from '../assets/images/avatar.webp'
 import { isUserAuth } from "./auth-reducer";
 
 //Auth consts
