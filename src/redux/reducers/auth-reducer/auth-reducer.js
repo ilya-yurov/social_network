@@ -1,6 +1,6 @@
 import { stopSubmit } from "redux-form";
-import { authAPI, profileAPI } from "../api/api";
-import defaultUserPhoto from '../assets/images/avatar.webp'
+import { authAPI, profileAPI } from "../../../api/api";
+import defaultUserPhoto from '../../../assets/images/avatar.webp'
 
 //Auth consts
 const SET_USER_DATA = 'SET_USER_DATA'

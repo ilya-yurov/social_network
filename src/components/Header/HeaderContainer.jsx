@@ -1,6 +1,6 @@
 import Header from './Header';
 import React from 'react';
-import {getUserProfile, isUserAuth, logoutUser} from '../../redux/auth-reducer';
+import {getUserProfile, isUserAuth, logoutUser} from '../../redux/reducers/auth-reducer/auth-reducer';
 import {connect} from 'react-redux';
 
 class HeaderContainer extends React.Component {

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import { loginUser } from '../../redux/auth-reducer';
+import { loginUser } from '../../redux/reducers/auth-reducer/auth-reducer';
 import Login from './Login';
 import React from 'react';
 

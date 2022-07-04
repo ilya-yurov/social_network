@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getStatus, setProfile, updateStatus } from '../../redux/profile-reducer';
+import { getStatus, setProfile, updateStatus } from '../../redux/reducers/profile-reducer/profile-reducer';
 import Profile from './Profile';
 import React from 'react';
 import { withRouter } from '../../hoc/withRouter';
