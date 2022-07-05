@@ -6,15 +6,15 @@ import { maxLengthCreator, required } from '../../utils/validators/validators';
 
 const maxLength50 = maxLengthCreator(50);
 
-const LoginForm = (props) => {
+const LoginForm = ({ handleSubmit, error }) => {
 	return (
-		<form className={s.content} onSubmit={props.handleSubmit}>
+		<form className={s.content} onSubmit={handleSubmit}>
 			<div className={s.content__inputs}>
 				<div>
-					<Field placeholder={'Login'} name={'login'} component={Input} validate={[required, maxLength50]}/>
+					<Field placeholder={'Login'} name={'login'} component={Input} validate={[required, maxLength50]} />
 				</div>
 				<div>
-					<Field placeholder={'Password'} type={'password'} name={'password'} component={Input} validate={[required, maxLength50]}/>
+					<Field placeholder={'Password'} type={'password'} name={'password'} component={Input} validate={[required, maxLength50]} />
 				</div>
 			</div>
 			<div className={s.content__checkbox}>
@@ -24,23 +24,23 @@ const LoginForm = (props) => {
 				<button>Login</button>
 			</div>
 			<div className={s.content__error}>
-				{props.error}
+				{error}
 			</div>
 		</form>
 	);
 }
 
-const LoginReduxForm =  reduxForm({form: 'login'})(LoginForm)
+const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm)
 
-const Login = (props) => {
+const Login = ({ loginUser, isAuth }) => {
 	const onSubmit = (FormData) => {
-		props.loginUser(FormData.login, FormData.password, FormData.rememberMe)
+		loginUser(FormData.login, FormData.password, FormData.rememberMe)
 	}
-	if(!props.isAuth) {
+	if (!isAuth) {
 		return (
 			<div className={s.login}>
 				<h1>Login</h1>
-				<LoginReduxForm onSubmit={onSubmit}/>
+				<LoginReduxForm onSubmit={onSubmit} />
 			</div>
 		)
 	} else {

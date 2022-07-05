@@ -3,10 +3,8 @@ import { loginUser } from '../../redux/reducers/auth-reducer/auth-reducer';
 import Login from './Login';
 import React from 'react';
 
-class LoginContainer extends React.Component {
-	render() {
-		return <Login isAuth={this.props.isAuth} loginUser={this.props.loginUser}/>
-	}
+const LoginContainer = ({isAuth, loginUser}) => {
+		return <Login isAuth={isAuth} loginUser={loginUser}/>
 }
 let mapStateToProps = (state) => {
 	return (

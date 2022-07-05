@@ -1,5 +1,5 @@
 //Dialogs consts
-const SEND_MESSAGE = 'SEND-MESSAGE';
+const SEND_MESSAGE = 'dialogs/SEND-MESSAGE';
 
 let initialState = {
 		dialogs: [

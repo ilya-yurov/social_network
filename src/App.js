@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.scss';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import Footer from './components/Footer/Footer';
@@ -23,22 +23,20 @@ class App extends React.Component {
 			return <Preloader />
 		}
 		return (
-			<BrowserRouter>
-				<div className='app-wrapper'>
-					<HeaderContainer />
-					<Navbar state={this.props.state.sidebar} />
-					<div className='app-wrapper__content'>
-						<Routes>
-							<Route path='/profile/:userId' element={<ProfileContainer />} />
-							<Route path='/profile' element={<ProfileContainer />} />
-							<Route path='/dialogs/*' element={<DialogsContainer />} />
-							<Route path='/users/*' element={<UsersContainer />} />
-							<Route path='/login' element={<LoginContainer />} />
-						</Routes>
-					</div>
-					<Footer />
+			<div className='app-wrapper'>
+				<HeaderContainer />
+				<Navbar state={this.props.state.sidebar} />
+				<div className='app-wrapper__content'>
+					<Routes>
+						<Route path='/profile/:userId' element={<ProfileContainer />} />
+						<Route path='/profile' element={<ProfileContainer />} />
+						<Route path='/dialogs/*' element={<DialogsContainer />} />
+						<Route path='/users/*' element={<UsersContainer />} />
+						<Route path='/login' element={<LoginContainer />} />
+					</Routes>
 				</div>
-			</BrowserRouter>
+				<Footer />
+			</div>
 		);
 	}
 }

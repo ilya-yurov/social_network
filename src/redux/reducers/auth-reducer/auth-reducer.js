@@ -3,9 +3,9 @@ import { authAPI, profileAPI } from "../../../api/api";
 import defaultUserPhoto from '../../../assets/images/avatar.webp'
 
 //Auth consts
-const SET_USER_DATA = 'SET_USER_DATA'
-const SET_USER_PHOTO = 'SET_USER_PHOTO'
-const REMOVE_USER_DATA = 'UNSET_USER_DATA'
+const SET_USER_DATA = 'auth/SET_USER_DATA'
+const SET_USER_PHOTO = 'auth/SET_USER_PHOTO'
+const REMOVE_USER_DATA = 'auth/UNSET_USER_DATA'
 
 
 let initialState =
@@ -52,51 +52,41 @@ export const isUserAuth = () => async (dispatch) => {
 
 }
 
-export const getUserProfile = (userId) => (dispatch) => {
+export const getUserProfile = (userId) => async (dispatch) => {
 	if (userId) {
-		profileAPI.getUserProfile(userId)
-			.then(data => {
-				let { small, large } = data.photos;
-				if (small === null)
-					small = defaultUserPhoto;
-				if (large === null)
-					large = defaultUserPhoto;
-				dispatch(setUserPhoto(small, large));
-			})
+		let response = await profileAPI.getUserProfile(userId)
+		let { small, large } = response.photos;
+		if (small === null)
+			small = defaultUserPhoto;
+		if (large === null)
+			large = defaultUserPhoto;
+		dispatch(setUserPhoto(small, large));
 	}
 }
 
-export const loginUser = (email, password, rememberMe) => (dispatch) => {
-	authAPI.login(email, password, rememberMe)
-		.then(data => {
-			if (data.resultCode === 0) {
-				authAPI.isAuth()
-					.then(data => {
-						if (data.resultCode === 0) {
-							let { email, id, login } = data.data;
-							dispatch(setAuthUserData(id, email, login));
-						}
-					})
-			} else {
-				let message = data.messages.length > 0 ? data.messages[0] : 'Some error';
-				dispatch(stopSubmit('login', { _error: message }));
-			}
-		})
+export const loginUser = (email, password, rememberMe) => async (dispatch) => {
+	let response = await authAPI.login(email, password, rememberMe)
+	if (response.resultCode === 0) {
+		let response = await authAPI.isAuth()
+		if (response.resultCode === 0) {
+			let { email, id, login } = response.data;
+			dispatch(setAuthUserData(id, email, login));
+		}
+	} else {
+		let message = response.messages.length > 0 ? response.messages[0] : 'Some error';
+		dispatch(stopSubmit('login', { _error: message }));
+	}
 }
 
 
-export const logoutUser = () => (dispatch) => {
-	authAPI.logout()
-		.then(data => {
-			if (data.resultCode === 0) {
-				authAPI.isAuth()
-					.then(data => {
-						if (data.resultCode === 1) {
-							dispatch(removeAuthUserData());
-						}
-					})
-			}
-		})
+export const logoutUser = () => async (dispatch) => {
+	let response = await authAPI.logout()
+	if (response.resultCode === 0) {
+		let response = await authAPI.isAuth()
+		if (response.resultCode === 1) {
+			dispatch(removeAuthUserData());
+		}
+	}
 }
 
 export default authReducer;

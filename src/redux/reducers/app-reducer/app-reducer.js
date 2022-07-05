@@ -1,7 +1,7 @@
 import { isUserAuth } from "../auth-reducer/auth-reducer";
 
 //Auth consts
-const INITIALIZE_SUCCESS = 'INITIALIZE_SUCCESS'
+const INITIALIZE_SUCCESS = 'app/INITIALIZE_SUCCESS'
 
 
 let initialState = 
