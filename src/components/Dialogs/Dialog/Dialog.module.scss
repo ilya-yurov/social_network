@@ -1,6 +1,7 @@
 
 .dialog {
 	padding: 20px 0px;
+	width: 150px;
 	border-right: 3px solid black;
 	a {
 		color: black;
@@ -10,7 +11,7 @@
 	&_active {
 		a {
 			display: inline-block;
-			font-size: 30px;
+			font-size: 25px;
 			font-weight: bold;
 			color: salmon;
 			&:after {

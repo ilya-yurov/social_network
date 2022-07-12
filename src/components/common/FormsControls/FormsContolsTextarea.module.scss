@@ -6,6 +6,7 @@
 	grid-template-rows: 1fr 34px;
 	justify-content: space-between;
 	gap: 10px;
+
 		&__formTextarea {
 			border-radius: 10px;
 			border: 3px solid black;
@@ -24,13 +25,12 @@
 				font-size: 25px;
 			}
 		}
-		&__formInput {
-			margin-top: 20px;
+		&__formTextarea_error {
 			border-radius: 10px;
-			border: 2px solid black;
+			border: 3px solid black;
 			overflow: hidden;
 			grid-area: form;
-			max-width: 200px;
+			width: 100%;
 			overflow-y: auto;
 			textarea {
 				resize: none;
@@ -42,16 +42,8 @@
 				padding: 10px;
 				font-size: 25px;
 			}
-			input {
-				resize: none;
-				display: block;
-				overflow-y: auto;
-				min-width: 100%;
-				min-height: 100%;
-				background-color: wheat;
-				font-size: 20px;
-			}
 		}
+
 		&__formButton {
 			grid-area: button;
 			align-self: end;
@@ -64,13 +56,7 @@
 				min-width: 100px;
 			}
 		}
-		&__formError {
-			grid-area: error;
-			color: red;
-		}
-		&__formInput_error {
-			border-color: red;
-		}
+
 		&__formButton_error {
 			grid-area: button;
 			align-self: end;
@@ -82,5 +68,10 @@
 				background-color: grey;
 				min-width: 100px;
 			}
+		}
+
+		&__formError {
+			grid-area: error;
+			color: red;
 		}
 }
