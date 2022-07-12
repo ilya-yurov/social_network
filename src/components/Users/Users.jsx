@@ -4,7 +4,7 @@ import userPhoto from '../../assets/images/avatar.webp'
 import User from './User/User';
 import { pageSlicer } from '../../utils/helpers';
 
-const Users = ({ users, follow, unfollow, setCurrentPage, currentPage, pageSize, totalUsersCount }) => {
+const Users = ({ users, follow, unfollow, setCurrentPage, currentPage, pageSize, totalUsersCount, }) => {
 
 	const getUsersElements = () => {
 		return users.map((u) => {

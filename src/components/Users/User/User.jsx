@@ -15,7 +15,7 @@ const User = (props) => {
 					? <div className={s.user__button_unfollow}><button disabled={props.isFollowing} onClick={() => {props.onUnFollow(props.id)}}>Unfollow</button></div>
 					: <div className={s.user__button_follow}><button disabled={props.isFollowing} onClick={() => {props.onFollow(props.id)}}>Follow</button></div>}
 				</div>
-				<div className={s.user__content}>
+				<div data-testid='user-element' className={s.user__content}>
 					<div className={s.user__name}>{props.userName}</div>
 					<div className={s.user__status}>{props.status}</div>
 					<div className={s.user__location}>
