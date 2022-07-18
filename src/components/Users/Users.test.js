@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { BrowserRouter, MemoryRouter, Routes } from 'react-router-dom';
 import Users from './Users';
 
 describe('Users component test', () => {
@@ -44,21 +44,21 @@ describe('Users component test', () => {
 		}
 	})
 
-	test('The Users component is being rendered',  () => {
+	test('The Users component is being rendered', () => {
 		render(
-		<MemoryRouter>
-			<Users users={response.items}/>
-		</MemoryRouter>
+			<MemoryRouter>
+				<Users users={response.items} />
+			</MemoryRouter>
 		);
 		const usersHeader = screen.getByText(/users/i);
 		expect(usersHeader).toBeInTheDocument();
 	});
 
-	test('The number of Users elements is 3',  () => {
+	test('The number of Users elements is 3', () => {
 		render(
-		<MemoryRouter>
-			<Users users={response.items}/>
-		</MemoryRouter>
+			<MemoryRouter>
+				<Users users={response.items} />
+			</MemoryRouter>
 		);
 		screen.debug();
 		const usersElements = screen.getAllByTestId('user-element');

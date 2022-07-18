@@ -11,6 +11,7 @@ import UsersContainer from './components/Users/UsersContainer';
 import React from 'react';
 import { initializeApp } from './redux/reducers/app-reducer/app-reducer';
 import Preloader from './components/common/Preloader/Preloader';
+import StartPage from './components/StartPage/StartPage';
 
 
 class App extends React.Component {
@@ -28,6 +29,7 @@ class App extends React.Component {
 				<Navbar state={this.props.state.sidebar} />
 				<div className='app-wrapper__content'>
 					<Routes>
+						<Route path='/' element={<StartPage />} />
 						<Route path='/profile/:userId' element={<ProfileContainer />} />
 						<Route path='/profile' element={<ProfileContainer />} />
 						<Route path='/dialogs/*' element={<DialogsContainer />} />
