@@ -4,7 +4,7 @@ import s from './StartPage.module.scss'
 
 const StartPage = (props) => {
 	return (
-		<div className={s.startPage}>
+		<div className={s.startPage} data-testid='start-page'>
 			<h1 className={s.startPage__header}>
 				START PAGE
 			</h1>

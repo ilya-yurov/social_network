@@ -21,7 +21,7 @@ const LoginForm = ({ handleSubmit, error }) => {
 				<Field component={'input'} name={'rememberMe'} type={'checkbox'} /> remember me
 			</div>
 			<div className={s.content__button}>
-				<button>Login</button>
+				<button data-testid='button-element'>Login</button>
 			</div>
 			<div className={s.content__error}>
 				{error}
@@ -38,7 +38,7 @@ const Login = ({ loginUser, isAuth }) => {
 	}
 	if (!isAuth) {
 		return (
-			<div className={s.login}>
+			<div data-testid='login-page' className={s.login}>
 				<h1>Login</h1>
 				<LoginReduxForm onSubmit={onSubmit} />
 			</div>

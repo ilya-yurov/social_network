@@ -9,7 +9,7 @@ const Profile = (props) => {
 		return <Preloader />
 	}
 	return (
-		<div>
+		<div data-testid='profile-page'>
 			<Wallpaper/>
 			<ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
 			<MyPostsContainer/>

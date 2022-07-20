@@ -1,0 +1,13 @@
+.errorPage {
+	text-align: center;
+	span {
+		color: red;
+		font-weight: bold;
+	}
+	&__header {
+		font-size: 25px;
+		font-weight: bold;
+		padding: 20px 0;
+		text-align: center;
+	}
+}
