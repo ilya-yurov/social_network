@@ -1,0 +1,21 @@
+.formWrapper {
+	padding-left: 10px;
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+	justify-content: center;
+	form {
+		display: flex;
+		gap: 20px;
+		/* flex-direction: column; */
+		background-color: white;
+		padding: 20px;
+		max-width: 500px;
+		border-radius: 8px;
+	}
+	h1 {
+		font-size: 20px;
+		font-weight: bold;
+		margin-left: 170px;
+	}
+}

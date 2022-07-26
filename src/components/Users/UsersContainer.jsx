@@ -2,12 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { withAuthRedirect } from '../../hoc/withAuthRedirect'
-import { follow, unfollow, getUsers, followUser, unfollowUser} from "../../redux/reducers/users-reducer/users-reducer"
+import { follow, unfollow, getUsers, followUser, unfollowUser, setFilter} from "../../redux/reducers/users-reducer/users-reducer"
 import { getCurrentPageSelector, getIsFetchingSelector, getPageSizeSelector,
 getTotalUsersCountSelector, getUsersSelector } from '../../redux/selectors/users-selectors'
 import Preloader from '../common/Preloader/Preloader'
 import Users from './Users'
-
 class UsersContainer extends React.Component {
 
 	componentDidMount() {
@@ -16,6 +15,10 @@ class UsersContainer extends React.Component {
 
 	setCurrentPage = (pageNumber) => {
 		this.props.getUsers(pageNumber, this.props.pageSize);
+	}
+
+	setFilter(filter) {
+		this.props.getUsers(this.props.currentPage, this.props.pageSize, filter.term);
 	}
 
 	followUser = (userId) => {
@@ -29,10 +32,16 @@ class UsersContainer extends React.Component {
 	render = () => {
 		return (
 		<> 
-			{this.props.isFetching ? <Preloader/> : <Users  totalUsersCount={this.props.totalUsersCount}
-			pageSize={this.props.pageSize} currentPage={this.props.currentPage}
-			setCurrentPage={this.setCurrentPage} users={this.props.users}
-			follow={this.followUser} unfollow={this.unfollowUser}/>}
+			{this.props.isFetching ? <Preloader/> : <Users
+			totalUsersCount={this.props.totalUsersCount}
+			pageSize={this.props.pageSize}
+			currentPage={this.props.currentPage}
+			setCurrentPage={this.setCurrentPage}
+			users={this.props.users}
+			follow={this.followUser}
+			unfollow={this.unfollowUser}
+			setFilter={this.setFilter}
+			/>}
 		</>
 		)
 	}
@@ -54,7 +63,7 @@ let mapStateToProps = (state) => {
 export default compose(
 				connect(
 					mapStateToProps,
-					{follow, unfollow, getUsers, followUser, unfollowUser}
+					{follow, unfollow, getUsers, followUser, unfollowUser, setFilter}
 				),
 				withAuthRedirect
 				)(UsersContainer)
