@@ -3,7 +3,6 @@ import s from './Users.module.scss'
 import userPhoto from '../../assets/images/avatar.webp'
 import User from './User/User';
 import {pageSlicer} from '../../utils/helpers';
-import {ErrorMessage} from 'formik';
 import {UsersSearchForm} from './UsersSearchForm/UsersSearchForm';
 
 
@@ -38,9 +37,8 @@ const Users = ({users, follow, unfollow, setCurrentPage, currentPage, pageSize, 
 
 	return (
 		<div>
-			<UsersSearchForm setFilter={setFilter}/>
+			<UsersSearchForm setFilter={setFilter} />
 			<div className={s.users}>
-				<div className={s.users__header}>Users</div>
 				{getUsersElements()}
 				<div className={s.users__pages}>
 					{createPaginator()}

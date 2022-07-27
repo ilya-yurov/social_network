@@ -11,10 +11,9 @@ export const usersSearchFormValidate = () => {
 }
 
 export const UsersSearchForm = ({setFilter}) => {
-	console.log(setFilter);
 
 	const submit = (values, {setSubmitting}) => {
-		setFilter(values.term);
+		setFilter(values);
 		setSubmitting(false)
 	};
 

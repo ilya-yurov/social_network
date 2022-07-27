@@ -20,3 +20,6 @@ export const getCurrentPageSelector = (state) => {
 export const getIsFetchingSelector = (state) => {
 	return state.usersPage.isFetching;
 }
+export const getFilterSelector = (state) => {
+	return state.usersPage.filter;
+}
