@@ -50,8 +50,8 @@ describe('Users component test', () => {
 				<Users users={response.items} />
 			</MemoryRouter>
 		);
-		const usersHeader = screen.getByText(/users/i);
-		expect(usersHeader).toBeInTheDocument();
+		const usersSearchForm = screen.getByText(/find your friend/i);
+		expect(usersSearchForm).toBeInTheDocument();
 	});
 
 	test('The number of Users elements is 3', () => {

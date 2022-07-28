@@ -10,15 +10,15 @@ import Users from './Users'
 class UsersContainer extends React.Component {
 
 	componentDidMount() {
-		this.props.getUsers(this.props.currentPage, this.props.pageSize, this.props.filter.term);
+		this.props.getUsers(this.props.currentPage, this.props.pageSize, this.props.filter);
 	}
 
 	setCurrentPage = (pageNumber) => {
-		this.props.getUsers(pageNumber, this.props.pageSize, this.props.filter.term);
+		this.props.getUsers(pageNumber, this.props.pageSize, this.props.filter);
 	}
 
 	setFilter =(filter) => {
-		this.props.getUsers(1, this.props.pageSize, filter.term);
+		this.props.getUsers(1, this.props.pageSize, filter);
 	}
 
 	followUser = (userId) => {

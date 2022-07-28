@@ -20,8 +20,9 @@ let initialState =
 	currentPage: 1,
 	isFetching: false,
 	filter: {
-		term: ''
-	}
+		term: '',
+		friend: null
+	},
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -81,7 +82,7 @@ const usersReducer = (state = initialState, action) => {
 export const follow = (userId) => ({type: FOLLOW, userId});
 export const unfollow = (userId) => ({type: UNFOLLOW, userId});
 export const setUsers = (users) => ({type: SET_USERS, users});
-export const setFilter = (term) => ({type: SET_FILTER, payload: {term}});
+export const setFilter = ({term, status}) => ({type: SET_FILTER, payload: {term, status}});
 export const setCurrentPage = (page) => ({type: SET_CURRENT_PAGE, page});
 export const setTotalUsersCount = (count) => ({type: SET_TOTAL_USERS_COUNT, count});
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
