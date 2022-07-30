@@ -41,6 +41,7 @@ class UsersContainer extends React.Component {
 			follow={this.followUser}
 			unfollow={this.unfollowUser}
 			setFilter={this.setFilter}
+			filter={this.props.filter}
 			/>}
 		</>
 		)

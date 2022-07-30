@@ -1,6 +1,6 @@
 import React from 'react';
 import {Field, Form, Formik, useFormik} from 'formik';
-import {Box, Button, TextField, Select, FormControl, InputLabel, MenuItem} from '@material-ui/core';
+import {Box, Button, TextField, MenuItem} from '@material-ui/core';
 import s from './UsersSearchForm.module.scss'
 
 export const usersSearchFormValidate = () => {
@@ -10,21 +10,20 @@ export const usersSearchFormValidate = () => {
 	}
 }
 
-export const UsersSearchForm = ({setFilter}) => {
+export const UsersSearchForm = ({setFilter, filter}) => {
+
+	let {term:currentTermValue, status:currentStatusValue} = filter
 
 	const formik = useFormik({
 		initialValues: {
-			term: '',
-			status: 'All',
+			term: currentTermValue,
+			status: currentStatusValue,
 		},
 		onSubmit: (values, {setSubmitting}) => {
 			setFilter(values);
-			alert(JSON.stringify(values, null, 2));
-
 			setSubmitting(false)
 		}
 	})
-
 		return(
 		<div className = {s.formWrapper} >
 			<Box height={20} />
@@ -32,7 +31,7 @@ export const UsersSearchForm = ({setFilter}) => {
 			<Box height={20} />
 
 			<Formik
-				initialValues={{term: '', }}
+				initialValues={formik.values}
 				validate={usersSearchFormValidate}
 				onSubmit={formik.handleSubmit}
 			>
@@ -51,6 +50,7 @@ export const UsersSearchForm = ({setFilter}) => {
 
 						<Field
 							as={TextField}
+							type="checkbox"
 							style={{width: "300px"}}
 							variant="outlined"
 							name="status"
@@ -58,9 +58,9 @@ export const UsersSearchForm = ({setFilter}) => {
 							onChange={formik.handleChange}
 							select
 							label="Status">
-							<MenuItem value={"All"}>All</MenuItem>
-							<MenuItem value={"Only followed"}>Only followed</MenuItem>
-							<MenuItem value={"Only unfollowed"}>Only unfollowed</MenuItem>
+							<MenuItem value={'null'}>All</MenuItem>
+							<MenuItem value={'true'}>Only followed</MenuItem>
+							<MenuItem value={'false'}>Only unfollowed</MenuItem>
 						</Field>
 
 						<Button

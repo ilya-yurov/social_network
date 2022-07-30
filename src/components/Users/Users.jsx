@@ -7,7 +7,7 @@ import {UsersSearchForm} from './UsersSearchForm/UsersSearchForm';
 
 
 
-const Users = ({users, follow, unfollow, setCurrentPage, currentPage, pageSize, totalUsersCount, setFilter}) => {
+const Users = ({users, follow, unfollow, setCurrentPage, currentPage, pageSize, totalUsersCount, setFilter, filter}) => {
 
 	const getUsersElements = () => {
 		return users.map((u) => {
@@ -37,7 +37,7 @@ const Users = ({users, follow, unfollow, setCurrentPage, currentPage, pageSize, 
 
 	return (
 		<div>
-			<UsersSearchForm setFilter={setFilter} />
+			<UsersSearchForm setFilter={setFilter} filter={filter}/>
 			<div className={s.users}>
 				{getUsersElements()}
 				<div className={s.users__pages}>

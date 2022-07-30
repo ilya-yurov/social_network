@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import Navbar from './components/Navbar/Navbar';
 import { renderWithRouter } from './utils/helpers';
 import { Provider } from 'react-redux';
+import {createStoreCopy} from './redux/redux-store';
 
 describe('Social network routing tests', () => {
 	test('Redirect to login page when try to get profile.', async () => {

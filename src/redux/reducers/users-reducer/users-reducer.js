@@ -21,7 +21,7 @@ let initialState =
 	isFetching: false,
 	filter: {
 		term: '',
-		friend: null
+		status: 'null'
 	},
 };
 
@@ -90,12 +90,12 @@ export const toggleIsFollowingProgress = (bool, userId) => ({type: TOGGLE_IS_FOL
 
 //Thunk ActionCreators
 
-export const getUsers = (currentPage, pageSize, term) => async (dispatch) => {
+export const getUsers = (currentPage, pageSize, filter) => async (dispatch) => {
 	dispatch(toggleIsFetching(true))
 	dispatch(setCurrentPage(currentPage))
-	dispatch(setFilter(term))
+	dispatch(setFilter(filter))
 
-	let response = await usersAPI.getUsers(currentPage, pageSize, term);
+	let response = await usersAPI.getUsers(currentPage, pageSize, filter);
 	dispatch(toggleIsFetching(false));
 	dispatch(setUsers(response.items));
 	dispatch(setTotalUsersCount(response.totalCount));
