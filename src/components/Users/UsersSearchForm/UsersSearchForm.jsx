@@ -3,12 +3,6 @@ import {Field, Form, Formik, useFormik} from 'formik';
 import {Box, Button, TextField, MenuItem} from '@material-ui/core';
 import s from './UsersSearchForm.module.scss'
 
-export const usersSearchFormValidate = () => {
-	const values = () => {
-		const errors = {};
-		return errors;
-	}
-}
 
 export const UsersSearchForm = ({setFilter, filter}) => {
 
@@ -32,7 +26,7 @@ export const UsersSearchForm = ({setFilter, filter}) => {
 
 			<Formik
 				initialValues={formik.values}
-				validate={usersSearchFormValidate}
+				/* validate={usersSearchFormValidate} */
 				onSubmit={formik.handleSubmit}
 			>
 				{({isSubmitting}) => (

@@ -1,51 +1,101 @@
-import { Field, reduxForm } from 'redux-form';
+/* import { Field, reduxForm } from 'redux-form'; */
 import s from './Login.module.scss';
-import { Navigate } from 'react-router-dom';
-import { Input } from '../common/FormsControls/FormsContols';
-import { maxLengthCreator, required } from '../../utils/validators/validators';
+import {Field, Form, Formik, useFormik} from 'formik';
+import {Box, Button, Checkbox, FormControlLabel, TextField} from '@material-ui/core';
+import {Navigate} from 'react-router-dom';
+import {object, string} from 'yup'
+import {useRef} from 'react';
+import React from 'react';
 
-const maxLength50 = maxLengthCreator(50);
+export const Login = ({loginUser, isAuth}) => {
 
-const LoginForm = ({ handleSubmit, error }) => {
-	return (
-		<form className={s.content} onSubmit={handleSubmit}>
-			<div className={s.content__inputs}>
-				<div>
-					<Field placeholder={'Login'} name={'login'} component={Input} validate={[required, maxLength50]} />
-				</div>
-				<div>
-					<Field placeholder={'Password'} type={'password'} name={'password'} component={Input} validate={[required, maxLength50]} />
-				</div>
-			</div>
-			<div className={s.content__checkbox}>
-				<Field component={'input'} name={'rememberMe'} type={'checkbox'} /> remember me
-			</div>
-			<div className={s.content__button}>
-				<button data-testid='button-element'>Login</button>
-			</div>
-			<div className={s.content__error}>
-				{error}
-			</div>
-		</form>
-	);
-}
+	const formikRef = useRef()
 
-const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm)
-
-const Login = ({ loginUser, isAuth }) => {
-	const onSubmit = (FormData) => {
-		loginUser(FormData.login, FormData.password, FormData.rememberMe)
+	const initialValues = {
+		email: '',
+		password: '',
+		rememberMe: false
 	}
+
 	if (!isAuth) {
 		return (
-			<div data-testid='login-page' className={s.login}>
-				<h1>Login</h1>
-				<LoginReduxForm onSubmit={onSubmit} />
-			</div>
+			<div data-testid="login-page" className={s.formWrapper} >
+				<Box height={20} />
+				<h1>Login:</h1>
+				<Box height={20} />
+
+				<Formik
+					initialValues={initialValues}
+					innerRef={formikRef}
+					validationSchema={object(
+						{
+							email: string().required('Please enter email')
+								.email('Invalid email'),
+							password: string().required('Please enter password')
+						})}
+					onSubmit={(values, {setStatus}) => {
+						loginUser(values, setStatus, formikRef.current.setSubmitting);
+					}}
+				>
+
+					{({isSubmitting, errors, touched, status, values, handleChange}) => (
+						<Form>
+							<Field
+								fullWidth
+								type="email"
+								name="email"
+								as={TextField}
+								variant='outlined'
+								color='primary'
+								label='Email'
+								error={Boolean(errors.email) && Boolean(touched.email)}
+								helperText={Boolean(touched.email) && errors.email}
+								value={values.email}
+								onChange={handleChange} />
+							<Box height={15} />
+							<Field
+								fullWidth
+								type="password"
+								name="password"
+								as={TextField}
+								variant='outlined'
+								color='primary'
+								label='Password'
+								error={Boolean(errors.password) && Boolean(touched.password)}
+								helperText={Boolean(touched.password) && errors.password}
+								value={values.password}
+								onChange={handleChange} />
+							<Box height={15} />
+							<div className={s.formWrapper__bottom}>
+								<FormControlLabel
+									control={<Checkbox checked={values.rememberMe} color='primary'/>}
+									label="remember me"
+									name="rememberMe"
+									onChange={handleChange}
+								/>
+								<Button
+									type="submit"
+									variant='contained'
+									color='primary'
+									disabled={isSubmitting}
+								>
+									Login
+								</Button>
+							</div>
+							<Box height={15} />
+							{status &&
+								<div className={s.formWrapper__error}>
+									<span className={s.formWrapper__errorHeader}>API Error:</span> {status.error}
+								</div>
+							}
+						</Form>
+					)}
+				</Formik>
+
+			</div >
 		)
 	} else {
 		return <Navigate to={'/profile'} />
 	}
-}
-
+};
 export default Login;

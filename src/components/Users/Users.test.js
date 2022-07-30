@@ -3,7 +3,7 @@ import { BrowserRouter, MemoryRouter, Routes } from 'react-router-dom';
 import Users from './Users';
 
 describe('Users component test', () => {
-	let response;
+	let response, filter;
 	beforeAll(() => {
 		response = {
 			items: [
@@ -41,13 +41,17 @@ describe('Users component test', () => {
 					"followed": false
 				}
 			]
+		},
+		filter = {
+			term: '',
+			status: null
 		}
 	})
 
 	test('The Users component is being rendered', () => {
 		render(
 			<MemoryRouter>
-				<Users users={response.items} />
+				<Users users={response.items} filter={filter}/>
 			</MemoryRouter>
 		);
 		const usersSearchForm = screen.getByText(/find your friend/i);
@@ -57,7 +61,7 @@ describe('Users component test', () => {
 	test('The number of Users elements is 3', () => {
 		render(
 			<MemoryRouter>
-				<Users users={response.items} />
+				<Users users={response.items} filter={filter}/>
 			</MemoryRouter>
 		);
 		screen.debug();

@@ -1,29 +1,22 @@
-.login {
-	font-size: 20px;
-	font-weight: bold;
-	padding: 20px;
-}
-.content {
-	font-weight: normal;
-	font-size: 15px;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	&__checkbox {
+
+.formWrapper {
+	margin-left: 15px;
+	h1 {
 		font-weight: bold;
-		color: #758191;
+		font-size: 20px
 	}
-	&__button {
-		button {
-			padding: 3px;
-			border-radius: 20px;
-			font-size: 20px;
-			color: #fff;
-			background-color: green;
-			min-width: 80px;
-		}
+	form {
+		max-width: 300px;
 	}
 	&__error {
 		color: red;
 	}
+	&__errorHeader {
+		font-weight: bold;
+	}
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+	}
 }
+
