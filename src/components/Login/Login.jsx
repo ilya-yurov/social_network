@@ -46,7 +46,7 @@ export const Login = ({loginUser, isAuth}) => {
 								type="email"
 								name="email"
 								as={TextField}
-								variant='outlined'
+								variant='filled'
 								color='primary'
 								label='Email'
 								error={Boolean(errors.email) && Boolean(touched.email)}
@@ -59,7 +59,7 @@ export const Login = ({loginUser, isAuth}) => {
 								type="password"
 								name="password"
 								as={TextField}
-								variant='outlined'
+								variant='filled'
 								color='primary'
 								label='Password'
 								error={Boolean(errors.password) && Boolean(touched.password)}
