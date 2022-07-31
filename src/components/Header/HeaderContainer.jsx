@@ -2,6 +2,8 @@ import Header from './Header';
 import React from 'react';
 import {getUserProfile, isUserAuth, logoutUser} from '../../redux/reducers/auth-reducer/auth-reducer';
 import {connect} from 'react-redux';
+import {compose} from 'redux';
+import {withRouter} from '../../hoc/withRouter';
 
 class HeaderContainer extends React.Component {
 
@@ -30,5 +32,7 @@ let mapStateToProps = (state) => {
 			isPhotoUpdate: state.auth.isPhotoUpdate
 		}
 	)
-}
-export default connect(mapStateToProps, {isUserAuth, getUserProfile, logoutUser})(HeaderContainer)
+} 
+export default compose(
+	withRouter,
+	connect(mapStateToProps, {isUserAuth, getUserProfile, logoutUser}))(HeaderContainer)

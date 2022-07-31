@@ -1,29 +1,38 @@
-import { NavLink } from 'react-router-dom';
-import logoutImg from '../../assets/images/header/unLogin.png'
+import {AppBar, Box, Toolbar, Typography} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import LogoutIcon from '@mui/icons-material/Logout';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import HomeIcon from '@mui/icons-material/Home';
+
+import {NavLink} from 'react-router-dom';
 import s from './Header.module.scss'
 
 const Header = (props) => {
+
 	return (
-		<header className={s.header}>
-			<div className={s.header__logo}>
-				<img src='https://e7.pngegg.com/pngimages/539/883/png-clipart-globe-earth-globe-miscellaneous-blue.png'></img>
-			</div>
-			<div className={s.header__login}>
-				{props.isAuth ?
-				<>
-					<div className={s.header__avatar}>
-						<img src={props.photos.small}/>
-					</div>
-					<div className={s.header__user}>{props.login}</div>
-					<div className={s.header__unLogin}>
-						<button onClick={props.logoutUser}>
-							<img src={logoutImg}/>
-						</button>
-					</div>
-				</> : 
-					<NavLink to={'/login'}>Login</NavLink>}
-			</div>
-		</header>
+		<Box color='primary' className={s.header} >
+			<AppBar style={{background: '#2196f3', color: 'white'}} position="static">
+				<Toolbar >
+					<MenuIcon className={s.header__icon} fontSize='large' sx={{mr: 1}} />
+					<NavLink className={s.header__icon} to={'/'}>
+						<HomeIcon className={s.header__icon} fontSize='large' sx={{mr: 1}} />
+					</NavLink>
+					<Typography variant="h6" component="div" sx={{flexGrow: 1}}>
+						Social network
+					</Typography>
+
+					{props.isAuth &&
+						<>
+							<Typography sx={{mr: 1}} variant="h6" component="div">{props.login}</Typography>
+							<NavLink className={s.header__icon} to={'/profile'}>
+								<AccountCircle sx={{mr: 1}} fontSize='large' />
+							</NavLink>
+							<LogoutIcon className={s.header__icon} onClick={props.logoutUser} fontSize='large' />
+						</>
+					}
+				</Toolbar>
+			</AppBar>
+		</Box >
 	);
 }
 

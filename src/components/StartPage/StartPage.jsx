@@ -18,7 +18,7 @@ const StartPage = ({isAuth, router}) => {
 				START PAGE
 			</h1>
 			<div>
-				<p>Wellcome to Sosical network homepage.</p>
+				<p>Wellcome to Socical network homepage.</p>
 				{!isAuth && 
 				<>
 				<p>Please <Button variant='contained' color='primary'><NavLink to='/login'>Login</NavLink></Button> first!</p>

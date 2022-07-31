@@ -10,6 +10,9 @@ import NewsPage from '../NewsPage/NewsPage';
 import MusicPage from '../MusicPage/MusicPage';
 import StartPageContainer from '../StartPage/StartPageContainer';
 import StartPage from '../StartPage/StartPage';
+import MusicPageContainer from '../MusicPage/MusicPageContainer';
+import NewsPageContainer from '../NewsPage/NewsPageContainer';
+import SettingsPageContainer from '../SettingsPage/SettingsPageContainer';
 
 const AppRouter = (props) => {
 	return (
@@ -21,9 +24,9 @@ const AppRouter = (props) => {
 				<Route path='/dialogs/*' element={<DialogsContainer />} />
 				<Route path='/users/*' element={<UsersContainer />} />
 				<Route path='/login' element={<LoginContainer />} />
-				<Route path='/news' element={<NewsPage />} />
-				<Route path='/music' element={<MusicPage />} />
-				<Route path='/settings' element={<SettingsPage />} />
+				<Route path='/news' element={<NewsPageContainer />} />
+				<Route path='/music' element={<MusicPageContainer />} />
+				<Route path='/settings' element={<SettingsPageContainer />} />
 				<Route path='/*' element={<ErrorPage />} />
 			</Routes>
 		</div>
