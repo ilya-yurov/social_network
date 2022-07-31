@@ -3,31 +3,30 @@ import './App.scss';
 import Footer from './components/Footer/Footer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
-import React from 'react';
+import React, {useEffect} from 'react';
 import { initializeApp } from './redux/reducers/app-reducer/app-reducer';
 import Preloader from './components/common/Preloader/Preloader';
 import AppRouter from './components/AppRouter/AppRouter';
 
-class App extends React.Component {
+const App = (props) => {
 
-	componentDidMount() {
-		this.props.initializeApp();
+	useEffect(() => {
+		props.initializeApp();
+	}, []);
+
+	if (!props.initialized) {
+		return <Preloader />
 	}
-	render() {
-		if (!this.props.initialized) {
-			return <Preloader />
-		}
-		return (
-			<div className='app-wrapper'>
-				<HeaderContainer />
-				<Navbar state={this.props.state.sidebar} />
-				<div className='app-wrapper__content'>
-					<AppRouter />
-				</div>
-				<Footer />
+	return (
+		<div className='app-wrapper'>
+			<HeaderContainer />
+			<Navbar />
+			<div className='app-wrapper__content'>
+				<AppRouter />
 			</div>
-		);
-	}
+			<Footer />
+		</div>
+	);
 }
 
 const mapStateToProps = (state) => {

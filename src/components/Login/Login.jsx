@@ -1,6 +1,6 @@
 /* import { Field, reduxForm } from 'redux-form'; */
 import s from './Login.module.scss';
-import {Field, Form, Formik, useFormik} from 'formik';
+import {Field, Form, Formik} from 'formik';
 import {Box, Button, Checkbox, FormControlLabel, TextField} from '@material-ui/core';
 import {Navigate} from 'react-router-dom';
 import {object, string} from 'yup'
@@ -21,7 +21,7 @@ export const Login = ({loginUser, isAuth}) => {
 		return (
 			<div data-testid="login-page" className={s.formWrapper} >
 				<Box height={20} />
-				<h1>Login:</h1>
+				<h1>PLEASE LOGIN FIRST:</h1>
 				<Box height={20} />
 
 				<Formik
