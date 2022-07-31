@@ -20,7 +20,7 @@ const App = (props) => {
 	return (
 		<div className='app-wrapper'>
 			<HeaderContainer />
-			<Navbar />
+			{/* <Navbar /> */}
 			<div className='app-wrapper__content'>
 				<AppRouter />
 			</div>

@@ -6,8 +6,8 @@ body {
 }
 
 .app-wrapper {
-	height: auto;
-	padding: 10px 10px 0px 10px;
+	height: 100vh;
+	/* padding: 10px 10px 0px 10px; */
 	background-color: whitesmoke;
 	width: 1600px;
 	margin: 0 auto;
@@ -16,7 +16,7 @@ body {
 	grid-template-columns: 2fr 10fr;
 	grid-template-areas: 
 	"header header"
-	"nav container"
+	"container container"
 	"footer footer";
 	&__content {
 		grid-area: container;
