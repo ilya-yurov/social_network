@@ -1,36 +1,40 @@
-.content {
-		&__post {
-			display: grid;
-			grid-template-rows: 55px 1fr;
-			grid-template-columns: 55px 1fr;
-			grid-template-areas: 
-			"icon text"
-			"like count";
-			margin-bottom: 25px;
+.post {
+	border: 1px solid rgb(177, 176, 176);
+	background: rgba(150, 153, 150, 0.1);
+	border-radius: 20px;
+	width: 900px;
+	padding: 10px;
+	display: grid;
+	grid-template-rows: 55px auto;
+	grid-template-columns: 55px 800px;
+	align-items: center;
+	grid-template-areas:
+		"icon text"
+		"like count";
+	margin-bottom: 25px;
+	overflow-wrap: break-word;
+
+	&__like {
+		grid-area: like;
+		img {
+			width: 30px;
 		}
-		&__like {
-			padding-left: 8px;
-			img {
-				width: 30px;
-			}
-		}
-		&__count {
-			font-size: 15px;
-			font-weight: bold;
-			padding-top: 10px;
-			grid-area: count;
-		}
-		&__postIcon {
-			grid-area: icon;
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-			background-color: orange;
-		}
-		&__postText {
-			font-style: italic;
-			grid-area: text;
-			font-size: 20px;
-			padding-top: 15px;
-		}
+	}
+	&__count {
+		font-size: 15px;
+		font-weight: bold;
+		grid-area: count;
+	}
+	&__postIcon {
+		grid-area: icon;
+		/* width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background-color: orange; */
+	}
+	&__postText {
+		grid-area: text;
+		font-size: 20px;
+	}
 }
+

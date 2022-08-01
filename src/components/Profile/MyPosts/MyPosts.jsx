@@ -8,7 +8,7 @@ const MyPosts = (props) => {
 	return (
 		<div>
 			<div className={s.content__formWrapper}>
-				<Header />
+				{/* <Header /> */}
 				<InputPost onAddNewPost={props.addPost}/>
 			</div>
 			<div className={s.content__postWrapper}>

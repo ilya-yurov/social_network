@@ -1,19 +1,23 @@
+import {Avatar, Typography} from '@mui/material';
+import {deepOrange} from '@mui/material/colors';
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import s from './Post.module.scss'
 
 
 const Post = (props) => {
 	return (
 
-		<div className={s.content__post}>
-			<div className={s.content__postIcon}>
+		<div className={s.post}>
+			<div className={s.post__postIcon}>
+				<Avatar sx={{bgcolor: deepOrange[500]}}>A</Avatar>
 			</div>
-			<div className={s.content__postText}>
-				{props.message}
+			<div className={s.post__postText}>
+				<Typography variant="h6" component="div">{props.message}</Typography>
 			</div>
-			<div className={s.content__like}>
-				<img src="https://avatars.mds.yandex.net/i?id=e8faafe524a572a80e84d8064eea2108-5708463-images-thumbs&n=13&exp=1" alt="" />
+			<div className={s.post__like}>
+				<ThumbUpOffAltIcon fontSize='large' />
 			</div>
-			<div className={s.content__count}>
+			<div className={s.post__count}>
 				{props.likes}
 			</div>
 		</div>

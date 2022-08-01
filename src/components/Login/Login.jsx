@@ -22,7 +22,7 @@ export const Login = ({loginUser, isAuth}) => {
 		return (
 			<div data-testid="login-page" className={s.formWrapper} >
 				<Box height={20} />
-				<Typography variant="h6" component="div">PLEASE LOGIN FIRST:</Typography>
+				<Typography variant="h6" component="div">LOGIN:</Typography>
 				<Box height={20} />
 
 				<Formik

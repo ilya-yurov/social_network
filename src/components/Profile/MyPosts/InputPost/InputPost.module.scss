@@ -1,8 +1,26 @@
-/* .content {
+.formWrapper {
+	width: 900px;
+	margin-bottom: 30px;
+	button {
+		width: 100px;
+	}
+	input {
+		height: 100px;
+	}
+	/* border: 1px solid black;
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
-		&__formInput {
+	gap: 10px; */
+	/* input {
+		resize: none;
+		display: block;
+		overflow: hidden;
+		min-width: 100%;
+		background-color: wheat;
+		padding: 10px;
+		font-size: 25px;
+	} */
+		/* &__formInput {
 
 			width: 100%;
 
@@ -25,5 +43,5 @@
 				background-color: green;
 				min-width: 100px;
 			}
-		}
-} */
+		} */
+}
