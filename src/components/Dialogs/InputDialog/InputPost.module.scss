@@ -1,0 +1,46 @@
+.formWrapper {
+	margin-bottom: 30px;
+	button {
+		width: 100px;
+	}
+	input {
+		height: 200;
+	}
+	/* border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	gap: 10px; */
+	/* input {
+		resize: none;
+		display: block;
+		overflow: hidden;
+		min-width: 100%;
+		background-color: wheat;
+		padding: 10px;
+		font-size: 25px;
+	} */
+		/* &__formInput {
+
+			width: 100%;
+
+			textarea {
+				resize: none;
+				display: block;
+				overflow: hidden;
+				min-width: 100%;
+				background-color: wheat;
+				padding: 10px;
+				font-size: 25px;
+			}
+		}
+		&__formButton {
+			align-self: end;
+			button {
+				border-radius: 20px;
+				font-size: 25px;
+				color: #fff;
+				background-color: green;
+				min-width: 100px;
+			}
+		} */
+}

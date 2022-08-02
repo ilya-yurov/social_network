@@ -3,12 +3,14 @@ import './App.scss';
 import Footer from './components/Footer/Footer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { initializeApp } from './redux/reducers/app-reducer/app-reducer';
 import Preloader from './components/common/Preloader/Preloader';
 import AppRouter from './components/AppRouter/AppRouter';
 
 const App = (props) => {
+
+	const [navbarToogle, setNavbarToogle] = useState(false);
 
 	useEffect(() => {
 		props.initializeApp();
@@ -19,8 +21,13 @@ const App = (props) => {
 	}
 	return (
 		<div className='app-wrapper'>
-			<HeaderContainer />
-			{/* <Navbar /> */}
+			<HeaderContainer 
+			handleNavbar={() => setNavbarToogle(true)}
+			/>
+			<Navbar 
+			navbarToogle={navbarToogle}
+			setNavbarClose={() => setNavbarToogle(false)}
+			/>
 			<div className='app-wrapper__content'>
 				<AppRouter />
 			</div>

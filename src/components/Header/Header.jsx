@@ -7,13 +7,13 @@ import HomeIcon from '@mui/icons-material/Home';
 import {NavLink} from 'react-router-dom';
 import s from './Header.module.scss'
 
-const Header = (props) => {
+const Header = ({isAuth, login, logoutUser, handleNavbar}) => {
 
 	return (
 		<Box color='primary' className={s.header} >
-			<AppBar style={{background: '#2196f3', color: 'white'}} position="static">
+			<AppBar style={{background: '#2196f3', color: 'white'}} /* position="static" */>
 				<Toolbar >
-					<MenuIcon className={s.header__icon} fontSize='large' sx={{mr: 1}} />
+					<MenuIcon onClick={handleNavbar} className={s.header__icon} fontSize='large' sx={{mr: 1}} />
 					<NavLink className={s.header__icon} to={'/'}>
 						<HomeIcon className={s.header__icon} fontSize='large' sx={{mr: 1}} />
 					</NavLink>
@@ -21,13 +21,13 @@ const Header = (props) => {
 						Social network
 					</Typography>
 
-					{props.isAuth &&
+					{isAuth &&
 						<>
-							<Typography sx={{mr: 1}} variant="h6" component="div">{props.login}</Typography>
+							<Typography sx={{mr: 1}} variant="h6" component="div">{login}</Typography>
 							<NavLink className={s.header__icon} to={'/profile'}>
 								<AccountCircle sx={{mr: 1}} fontSize='large' />
 							</NavLink>
-							<LogoutIcon className={s.header__icon} onClick={props.logoutUser} fontSize='large' />
+							<LogoutIcon className={s.header__icon} onClick={logoutUser} fontSize='large' />
 						</>
 					}
 				</Toolbar>

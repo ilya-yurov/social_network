@@ -2,21 +2,19 @@
 
 
 html, body {
-	background-color: #c0c0c0;
+	background-color: #46c6dd;
 	display: flex;
 	justify-content: center;
-	
-	
-	/* padding: 0 calc(20px - (100vw - 100%)) 0 0; */
-
+	font-family: Roboto;
+	overflow-x: hidden;
 }
 
 .app-wrapper {
 	/* padding: 10px 10px 0px 10px; */
 	min-height: 100%;
 	background-color: whitesmoke;
-	width: 1600px;
-	margin: 0 auto;
+	width: 100vw;
+	/* margin: 0 auto; */
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 	grid-template-columns: 100%;

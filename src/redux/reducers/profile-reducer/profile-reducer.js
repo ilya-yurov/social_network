@@ -11,7 +11,8 @@ let initialState =
 	posts: [
 		{ message: "Hello, that's my first try of props usage!", id: 1, likes: "10" },
 		{ message: "I wanna have 99 likes at this post!", id: 2, likes: "99" },
-		{ message: "OMG he did it!!!", id: 3, likes: "999" }
+		{ message: "OMG he did it!!!", id: 3, likes: "999" },
+		{ message: "Default post text", id: 4, likes: "0" }
 	],
 	profile: null,
 	status: ""

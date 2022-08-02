@@ -1,11 +1,11 @@
 .wrapper {
 	display: grid;
-	grid-template-rows: 600px 1fr;
-	height: calc(100vh - 95px);
+	grid-template-rows: 500px 1fr;
+	/* height: calc(100vh - 95px); */
 }
 .content {
 	display: grid;
-	grid-template-columns: 1fr 8fr;
+	grid-template-columns: 200px 900px;
 	gap: 20px;
 	padding: 20px;
 	font-size: 20px;

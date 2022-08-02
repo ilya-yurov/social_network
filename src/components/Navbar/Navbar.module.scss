@@ -1,32 +1,8 @@
-.nav {
-	grid-area: nav;
-	margin-top: 10px;
-	font-size: 30px;
-	padding: 15px;
-	line-height: 40px;
-	min-height: 850px;
+.navbarItem {
 
-	background-color: yellow;
-
-	&__item {
-		font-weight: bold;
-			a {
-				color: black;
-			}
-		&_hover {
-			&:hover a {
-				color: gray;
-			}
+		/* width: 200px; */
+		a {
+			color: inherit;
 		}
-		&_active {
-			&:active a {
-				color: green;
-			}
-		}
-	}
 
-	&__friends {
-		margin-top: 100px;
-		font-size: 35px;
-	}
 }

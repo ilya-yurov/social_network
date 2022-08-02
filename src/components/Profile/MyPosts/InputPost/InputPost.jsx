@@ -31,9 +31,9 @@ const InputPostForm = (props) => {
 			<Formik
 				innerRef={formikRef}
 				initialValues={initialValues}
-				onSubmit={(values) => {
+				onSubmit={(values, {resetForm}) => {
 					props.onAddNewPost(values.term);
-					alert(JSON.stringify(values, null, 2))
+					resetForm(initialValues)
 					formikRef.current.setSubmitting(false)
 				}}
 				validationSchema={object(

@@ -13,8 +13,9 @@
 			display: inline-block;
 			font-size: 25px;
 			font-weight: bold;
-			color: salmon;
-			&:after {
+			color: #2196f3 ;
+			;
+			/* &:after {
 				content: "";
 				display: inline-block;
 				vertical-align: middle;
@@ -24,7 +25,7 @@
 				margin-right: 10px;
 				background-color: green;
 				border-radius: 50%;
-			}
+			} */
 		}
 	}
 }
