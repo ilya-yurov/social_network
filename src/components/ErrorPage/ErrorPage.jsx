@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 import s from './ErrorPage.module.scss'
 
 const ErrorPage = (props) => {
@@ -15,4 +15,4 @@ const ErrorPage = (props) => {
 	);
 };
 
-export default ErrorPage;
+export default ErrorPage

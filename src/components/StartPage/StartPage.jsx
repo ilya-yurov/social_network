@@ -100,12 +100,6 @@ const itemData = [
 
 const StartPage = ({isAuth, router}) => {
 
-	/* const isAuthRedirect = () => {
-		setTimeout(() => {
-			router.navigate('/login')
-		}, 5000)
-	} */
-
 	return (
 		<div className={s.startPage} data-testid='start-page'>
 			<div>
@@ -116,8 +110,6 @@ const StartPage = ({isAuth, router}) => {
 				{!isAuth &&
 					<>
 						<p>Please <Button variant='contained' color='primary'><NavLink to='/login'>Login</NavLink></Button> first!</p>
-						{/* <p><span>You will be redirect on login page automaticly after 5 seconds</span></p>
-				{isAuthRedirect()} */}
 					</>
 				}
 			</div>

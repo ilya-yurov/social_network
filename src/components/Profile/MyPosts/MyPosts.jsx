@@ -1,4 +1,3 @@
-import Header from './Header/Header';
 import InputPost from './InputPost/InputPost';
 import s from './MyPosts.module.scss'
 import Post from './Post/Post';
@@ -8,7 +7,6 @@ const MyPosts = (props) => {
 	return (
 		<div>
 			<div className={s.content__formWrapper}>
-				{/* <Header /> */}
 				<InputPost onAddNewPost={props.addPost}/>
 			</div>
 			<div className={s.content__postWrapper}>

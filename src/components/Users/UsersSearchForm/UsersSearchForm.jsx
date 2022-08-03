@@ -26,7 +26,6 @@ export const UsersSearchForm = ({setFilter, filter}) => {
 
 			<Formik
 				initialValues={formik.values}
-				/* validate={usersSearchFormValidate} */
 				onSubmit={formik.handleSubmit}
 			>
 				{({isSubmitting}) => (

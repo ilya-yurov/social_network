@@ -1,29 +1,16 @@
-import React, {useRef} from 'react';
+import React, {useRef} from 'react'
 import s from './InputPost.module.scss'
-/* import { Field, reduxForm } from 'redux-form'; */
-
-import {Field, Form, Formik, useFormik} from 'formik';
-import {Box, Button, TextField, MenuItem} from '@material-ui/core';
-import {object, string} from 'yup';
-import {Stack} from '@mui/material';
-
-/* const maxLength10 = maxLengthCreator(10); */
+import {Field, Form, Formik, useFormik} from 'formik'
+import {Box, Button, TextField, MenuItem} from '@material-ui/core'
+import {object, string} from 'yup'
+import {Stack} from '@mui/material'
 
 const InputPostForm = (props) => {
 	const formikRef = useRef()
 	const initialValues = {
 		term: ''
 	}
-	/* const formik = useFormik({
-		initialValues: {
-			term: '',
-		},
-		onSubmit: (values, {setSubmitting}) => {
-			props.onAddNewPost(values.term);
-			alert(JSON.stringify(values, null, 2))
-			formikRef.current.setSubmitting(false)
-		}
-	}) */
+
 	return (
 		<div className={s.formWrapper} >
 			<Box height={20} />
@@ -60,7 +47,6 @@ const InputPostForm = (props) => {
 								value={values.term}
 								onChange={handleChange} />
 							<Button
-							/* size='medium' */
 								type="submit"
 								variant='contained'
 								color='primary'
@@ -76,18 +62,4 @@ const InputPostForm = (props) => {
 	);
 }
 
-/* const InputPostReduxForm = reduxForm({form: 'postInput'})(InputPostForm)
-
-const InputPost = (props) => {
-	
-	const AddNewPost = (FormData) => {
-		props.onAddNewPost(FormData.newPostText);
-	}
-	return (
-		<div>
-			<InputPostReduxForm onSubmit={AddNewPost} />
-		</div>
-	);
-} */
-
-export default InputPostForm;
+export default InputPostForm

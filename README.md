@@ -1,8 +1,15 @@
-# Learn the basics React/Redux.
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?size=25&center=true&lines=Learn+the+basics+React%2FRedux)](https://git.io/typing-svg)
 
-As a teaching aid, I used a course from Dima IT-KAMASUTRA (https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8 ). I am implementing a large project "Social Network" studying concepts and architectural principles step by step.
+As a teaching aid, I used a [course](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8 ) from Dima IT-KAMASUTRA. I am implementing a large project "Social Network" studying concepts and architectural principles step by step.
 
-## Components diagram
+## Technologies and concepts learned during the creation process:
+| **create-react-app** | **GRID/FLEX layout** | **UI/BLL/DAL layers** | **FLUX** |
+| **react-router-dom** | **React** | **Redux** | **REST API** |
+| **class/functional components** | **React Hooks** | **React HOCs** | **Redux thunk** |
+| **Redux form/Formik** | **Reselect** | **Material UI** | **Unit/integration testing with Jest and react-testing-library** |
+**etc.**
 
-![24](https://user-images.githubusercontent.com/76982614/171991257-791d886e-efcd-4f16-9393-778be5a370a7.png)
+# Social network components diagram
+
+![AppStructure](https://user-images.githubusercontent.com/76982614/182531151-1554432a-a8b7-4e70-ba91-81ac81aaf86f.svg)
 

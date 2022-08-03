@@ -1,12 +1,11 @@
-/* import { Field, reduxForm } from 'redux-form'; */
-import s from './Login.module.scss';
-import {Field, Form, Formik} from 'formik';
-import {Box, Button, Checkbox, FormControlLabel, TextField, Typography} from '@mui/material';
-import {Navigate} from 'react-router-dom';
+import s from './Login.module.scss'
+import {Field, Form, Formik} from 'formik'
+import {Box, Button, Checkbox, FormControlLabel, TextField, Typography} from '@mui/material'
+import {Navigate} from 'react-router-dom'
 import {object, string} from 'yup'
-import {useRef} from 'react';
-import React from 'react';
-import {Alert} from '@mui/material';
+import {useRef} from 'react'
+import React from 'react'
+import {Alert} from '@mui/material'
 
 export const Login = ({loginUser, isAuth}) => {
 
@@ -99,4 +98,4 @@ export const Login = ({loginUser, isAuth}) => {
 		return <Navigate to={'/profile'} />
 	}
 };
-export default Login;
+export default Login

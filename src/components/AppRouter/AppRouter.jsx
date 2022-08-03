@@ -18,15 +18,15 @@ const AppRouter = (props) => {
 	return (
 		<div> 
 			<Routes>
-				<Route path='/' element={<StartPageContainer />} />
-				<Route path='/profile/:userId' element={<ProfileContainer />} />
-				<Route path='/profile' element={<ProfileContainer />} />
-				<Route path='/dialogs/*' element={<DialogsContainer />} />
-				<Route path='/users/*' element={<UsersContainer />} />
-				<Route path='/login' element={<LoginContainer />} />
-				<Route path='/news' element={<NewsPageContainer />} />
-				<Route path='/music' element={<MusicPageContainer />} />
-				<Route path='/settings' element={<SettingsPageContainer />} />
+				<Route path='/' element={<StartPageContainer />} /> //done
+				<Route path='/profile/:userId' element={<ProfileContainer />} /> //done
+				<Route path='/profile' element={<ProfileContainer />} /> //done
+				<Route path='/dialogs/*' element={<DialogsContainer />} /> //done
+				<Route path='/users/*' element={<UsersContainer />} /> //done
+				<Route path='/login' element={<LoginContainer />} /> //done
+				<Route path='/news' element={<NewsPageContainer />} /> //done
+				<Route path='/music' element={<MusicPageContainer />} /> //done
+				<Route path='/settings' element={<SettingsPageContainer />} /> //done
 				<Route path='/*' element={<ErrorPage />} />
 			</Routes>
 		</div>
