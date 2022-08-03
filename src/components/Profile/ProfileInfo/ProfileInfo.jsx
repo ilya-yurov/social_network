@@ -6,7 +6,7 @@ const ProfileInfo = (props) => {
 	return (
 		<div className={s.content__infoWrapper}>
 			<Avatar photo={props.profile.photos.large}/>
-			<Description info={props.profile} status={props.status} updateStatus={props.updateStatus}/>
+			<Description isAuth={props.isAuth} currentUserId={props.currentUserId} info={props.profile} status={props.status} updateStatus={props.updateStatus}/>
 		</div>
 	)
 }

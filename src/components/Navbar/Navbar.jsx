@@ -6,7 +6,6 @@ import ForumIcon from '@mui/icons-material/Forum';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import {Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Stack, Typography} from '@mui/material';
-import {useState} from 'react';
 import {NavLink} from 'react-router-dom';
 import s from './Navbar.module.scss'
 

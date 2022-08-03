@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import s from './ProfileStatus.module.scss'
 
-const ProfileStatus = (props) => {
+const ProfileStatus = ({isAuth, status, updateStatus, currentUserId}) => {
 
 	let [editMode, setEditMode] = useState(false);
-	let [status, setStatus] = useState(props.status);
+	let [localStatus, setLocalStatus] = useState(status);
+
+	let canUpdateStatus = !currentUserId && isAuth ? true : false
+	let statusString = canUpdateStatus ? "Enter your status here." : "No status"
 
 	useEffect(() => {
-		setStatus(props.status);
-	}, [props.status])
+		setLocalStatus(status);
+	}, [status])
 
 	const activateEditMode = () => {
 		setEditMode(true);
@@ -16,11 +19,11 @@ const ProfileStatus = (props) => {
 
 	const deactivateEditMode = () => {
 		setEditMode(false);
-		props.updateStatus(status);
+		updateStatus(localStatus);
 	}
 
 	const onStatusChange = (e) => {
-		setStatus(e.currentTarget.value)
+		setLocalStatus(e.currentTarget.value)
 	}
 
 	return (
@@ -28,13 +31,13 @@ const ProfileStatus = (props) => {
 		{!editMode &&
 			<div className={s.status__data}>
 				<span className={s.status__header}>Status: </span>
-				<span onDoubleClick={activateEditMode} >{props.status || "Enter your status here."}</span>
+				<span onDoubleClick={canUpdateStatus ? activateEditMode : null} >{status || statusString}</span>
 			</div>
 		}
 		{editMode &&
 			<div className={s.status__input}>
 				<span className={s.status__header}>Status: </span>
-				<input onChange={onStatusChange} autoFocus={true} onBlur={deactivateEditMode} value={status} />
+				<input onChange={onStatusChange} autoFocus={true} onBlur={deactivateEditMode} value={localStatus} />
 			</div>
 		}
 	</div>

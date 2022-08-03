@@ -109,7 +109,7 @@ const StartPage = ({isAuth, router}) => {
 				<Box height={20}/>
 				{!isAuth &&
 					<>
-						<p>Please <Button variant='contained' color='primary'><NavLink to='/login'>Login</NavLink></Button> first!</p>
+						<p>Please <Button  variant='contained' color='primary'><NavLink data-testid={'login-link'} to='/login'>Login</NavLink></Button> first!</p>
 					</>
 				}
 			</div>
