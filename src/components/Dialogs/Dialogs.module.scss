@@ -1,9 +1,11 @@
 .wrapper {
 	display: grid;
 	grid-template-rows: 500px 1fr;
-	/* height: calc(100vh - 95px); */
 }
+
 .content {
+	border: 2px solid rgba(187, 184, 184, 0.356);
+	border-radius: 30px;
 	display: grid;
 	grid-template-columns: 200px 900px;
 	gap: 20px;
@@ -11,10 +13,6 @@
 	font-size: 20px;
 	font-weight: bold;
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-		&__dialogs {
-
-		}
-
 		&__messages {
 			overflow-y: auto;
 		}

@@ -18,10 +18,6 @@ const User = (props) => {
 				<div data-testid='user-element' className={s.user__content}>
 					<div className={s.user__name}>{props.userName}</div>
 					<div className={s.user__status}>{props.status}</div>
-					<div className={s.user__location}>
-						<div className={s.user__country}>{'props.location.country'},</div> 
-						<div className={s.user__city}>{'props.location.city'}</div>
-					</div>
 				</div>
 			</div>
 		</div>

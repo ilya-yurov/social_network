@@ -1,44 +1,29 @@
+.usersWrapper {
+	grid-template-rows: 640px 30px;
+display: grid;
+
+}
+
 .users {
-		&__header {
-			font-size: 25px;
-			font-weight: bold;
-			margin: 10px 0 20px 10px;
-		}
-		&__button {
-			margin: 0 0 30px 10px;
-			button {
-				border-radius: 5px;
-				font-size: 18px;
-				font-weight: bold;
-				color: #fff;
-				background-color: green;
-				min-width: 100px;
-				min-height: 100%;
-			}
-		}
 		&__pages {
-			margin-left: 330px;
+			
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 			button {
-				background-color: #f5f5f5;
+				margin-right: 4px;
 				font-size: 25px;
 			}		
 		}
-		&__pages_active {
-			margin-left: 450px;
-			button {
-				background-color: green;
-				font-size: 25px;
-			}		
-		}
+}
 
-
-		&__page {
-			margin-left: 10px;
-			color: grey;
-			&_selected {
-				margin-left: 10px;
-				font-weight: bold;
-				color: black;
-			}
-		}
+.pagination {
+			
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	button {
+		margin-right: 4px;
+		font-size: 25px;
+	}		
 }

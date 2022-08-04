@@ -55,6 +55,7 @@ export const Login = ({loginUser, isAuth}) => {
 							<Box height={15} />
 							<Field
 								fullWidth
+								
 								type="password"
 								name="password"
 								as={TextField}
@@ -91,7 +92,9 @@ export const Login = ({loginUser, isAuth}) => {
 						</Form>
 					)}
 				</Formik>
-
+				<Typography variant="body1" component="div">You can use this data to login:</Typography>
+				<Typography variant="body1" component="div">Email: <span>default_user_socialnetwork@mail.ru</span></Typography>
+				<Typography variant="body1" component="div">Password: <span>social123</span></Typography>
 			</div >
 		)
 	} else {

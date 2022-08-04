@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useState} from 'react'
 import s from './Users.module.scss'
 import userPhoto from '../../assets/images/avatar.webp'
 import User from './User/User';
-import {pageSlicer} from '../../utils/helpers';
 import {UsersSearchForm} from './UsersSearchForm/UsersSearchForm';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 
 
@@ -23,26 +25,19 @@ const Users = ({users, follow, unfollow, setCurrentPage, currentPage, pageSize, 
 			/>)
 		});
 	}
-	const createPaginator = () => {
-		let slicedPages = pageSlicer(totalUsersCount, pageSize, currentPage);
-		return slicedPages.map(n => {
-			return (<button
-				key={n}
-				onClick={() => {setCurrentPage(n)}}
-				className={currentPage === n ? s.users__page_selected : s.users__page}>
-				{n}
-			</button>)
-		})
-	}
 
 	return (
 		<div>
-			<UsersSearchForm setFilter={setFilter} filter={filter}/>
-			<div className={s.users}>
-				{getUsersElements()}
-				<div className={s.users__pages}>
-					{createPaginator()}
+			<UsersSearchForm setFilter={setFilter} filter={filter} />
+			<div className={s.usersWrapper}>
+				<div className={s.users}>
+					{getUsersElements()}
 				</div>
+
+				<Stack className={s.pagination} spacing={2}>
+					<Pagination count={Math.ceil(totalUsersCount/pageSize)} page={currentPage} onChange={setCurrentPage} />
+				</Stack>
+
 			</div>
 		</div>
 	)

@@ -11,9 +11,9 @@ import s from './Navbar.module.scss'
 
 const NavbarItem = ({icon, link, element}) => {
 	return (
-		<ListItem >
-			<Stack flexGrow={1} className={s.navbarItem}>
-				<IconButton>
+		<ListItem>
+			<Stack flexDirection={'row'} alignItems={'center'} flexGrow={1} className={s.navbarItem}>
+				{/* <IconButton> */}
 					<ListItemIcon>
 						<NavLink to={link}>
 							{icon}
@@ -22,7 +22,7 @@ const NavbarItem = ({icon, link, element}) => {
 					<NavLink to={link}>
 					<Typography sx={{marginRight: '200px'}}variant='subtitle1'>{element}</Typography>
 					</NavLink>
-				</IconButton>
+				{/* </IconButton> */}
 			</Stack>
 		</ListItem>
 	)
