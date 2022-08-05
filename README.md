@@ -1,4 +1,14 @@
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?size=25&center=true&lines=Learn+the+basics+React%2FRedux)](https://git.io/typing-svg)
+<h1 align="center">Social network</h1>
+
+<h1 align="center">
+  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?size=30&width=650&lines=Learn+the+basics+of+React%2FRedux+usage" alt="Typing SVG" /></a>
+</h1>
+
+<h2 align="center"><a  href="[https://solitairevue.firebaseapp.com](https://ilya-yurov.github.io/social_network)">Live Demo</a></h2>
+
+**BRIEF DEMO**
+
+<iframe src="https://giphy.com/embed/7JrblNGmvuphJB8ljW" width="480" height="242" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p align="center"><a href="https://giphy.com/gifs/7JrblNGmvuphJB8ljW"></a></p>
 
 As a teaching aid, I used a [course](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8 ) from Dima IT-KAMASUTRA. I am implementing a large project "Social Network" studying concepts and architectural principles step by step.
 
