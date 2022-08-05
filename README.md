@@ -4,9 +4,13 @@
   <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?size=30&width=650&lines=Learn+the+basics+of+React%2FRedux+usage" alt="Typing SVG" /></a>
 </h1>
 
-<h2 align="center"><a  href="[https://solitairevue.firebaseapp.com](https://ilya-yurov.github.io/social_network)">Live Demo</a></h2>
+<h2 align="center"><a  href="https://ilya-yurov.github.io/social_network">Live Demo</a></h2>
 
-**BRIEF DEMO**
+<p align="center">**BRIEF DEMO**</p>
+
+<p align="center">
+  <img src="https://giphy.com/embed/7JrblNGmvuphJB8ljW" alt="Demonstration" />
+</p>
 
 <iframe src="https://giphy.com/embed/7JrblNGmvuphJB8ljW" width="480" height="242" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p align="center"><a href="https://giphy.com/gifs/7JrblNGmvuphJB8ljW"></a></p>
 
