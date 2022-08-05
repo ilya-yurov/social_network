@@ -7,8 +7,7 @@
 <h2 align="center"><a  href="https://ilya-yurov.github.io/social_network">Live Demo</a></h2>
 
 
-<p align="center">
-<img src="[https://media.giphy.com/media/7JrblNGmvuphJB8ljW/giphy.gif](https://user-images.githubusercontent.com/76982614/182996241-88f2b6eb-9746-41f1-9c8a-5ea28efd15cc.gif)" width="80%"></p>
+![optimized_gif](https://user-images.githubusercontent.com/76982614/182996241-88f2b6eb-9746-41f1-9c8a-5ea28efd15cc.gif)
 
 As a teaching aid, I used a [course](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8 ) from Dima IT-KAMASUTRA. I am implementing a large project "Social Network" studying concepts and architectural principles step by step.
 
