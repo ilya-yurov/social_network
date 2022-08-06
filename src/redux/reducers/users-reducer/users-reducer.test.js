@@ -1,6 +1,6 @@
-import usersReducer, { follow, unfollow } from "./users-reducer";
+import usersReducer, {follow, unfollow} from "./users-reducer"
 
-let state = 
+let state =
 {
 	users: [
 		{followed: false, id: 24754, name: "person1", photos: {small: null, large: null}, status: null, uniqueUrlName: null},
@@ -12,25 +12,25 @@ let state =
 	totalUsersCount: 0,
 	currentPage: 1,
 	isFetching: false,
-};
+}
 
 test('successfuly follow user', () => {
 	//1. Initialize test (add some source data)
-	let userId = 24753;
-	let action = follow(userId);
+	let userId = 24753
+	let action = follow(userId)
 	//2. Make action
 	let newState = usersReducer(state, action)
 	//3. Check expectation
-	let userFollowStatus = newState.users.find(p => p.id === userId).followed;
-	expect(userFollowStatus).toBe(true);
-});
+	let userFollowStatus = newState.users.find(p => p.id === userId).followed
+	expect(userFollowStatus).toBe(true)
+})
 test('successfuly unfollow user', () => {
 	//1. Initialize test (add some source data)
-	let userId = 24752;
-	let action = unfollow(userId);
+	let userId = 24752
+	let action = unfollow(userId)
 	//2. Make action
 	let newState = usersReducer(state, action)
 	//3. Check expectation
-	let userFollowStatus = newState.users.find(p => p.id === userId).followed;
-	expect(userFollowStatus).toBe(false);
-});
+	let userFollowStatus = newState.users.find(p => p.id === userId).followed
+	expect(userFollowStatus).toBe(false)
+})

@@ -1,20 +1,16 @@
-import {connect} from 'react-redux';
+import {connect} from 'react-redux'
 import React from 'react'
-import {NavLink} from 'react-router-dom';
-import {compose} from 'redux';
-import {withAuthRedirect} from '../../hoc/withAuthRedirect';
-import {withRouter} from '../../hoc/withRouter';
-import ProfileContainer from '../Profile/ProfileContainer';
-import StartPage from './StartPage';
-import s from './StartPage.module.scss'
+import {compose} from 'redux'
+import {withRouter} from '../../hoc/withRouter'
+import StartPage from './StartPage'
 
 const StartPageContainer = (props) => {
 	return (
 		<div>
-			<StartPage {...props}/>
+			<StartPage {...props} />
 		</div>
-	);
-};
+	)
+}
 
 let mapStateToProps = (state) => {
 	return (
@@ -27,4 +23,4 @@ let mapStateToProps = (state) => {
 export default compose(
 	connect(mapStateToProps),
 	withRouter
-	)(StartPageContainer);
+)(StartPageContainer)

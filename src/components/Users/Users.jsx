@@ -1,11 +1,10 @@
-import React, {useEffect} from 'react';
-import {useState} from 'react'
+import React from 'react'
 import s from './Users.module.scss'
 import userPhoto from '../../assets/images/avatar.webp'
-import User from './User/User';
-import {UsersSearchForm} from './UsersSearchForm/UsersSearchForm';
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
+import User from './User/User'
+import {UsersSearchForm} from './UsersSearchForm/UsersSearchForm'
+import Pagination from '@mui/material/Pagination'
+import Stack from '@mui/material/Stack'
 
 
 
@@ -23,7 +22,7 @@ const Users = ({users, follow, unfollow, setCurrentPage, currentPage, pageSize, 
 				status={u.status}
 				key={u.id}
 			/>)
-		});
+		})
 	}
 
 	return (
@@ -35,7 +34,7 @@ const Users = ({users, follow, unfollow, setCurrentPage, currentPage, pageSize, 
 				</div>
 
 				<Stack className={s.pagination} spacing={2}>
-					<Pagination count={Math.ceil(totalUsersCount/pageSize)} page={currentPage} onChange={setCurrentPage} />
+					<Pagination count={Math.ceil(totalUsersCount / pageSize)} page={currentPage} onChange={setCurrentPage} />
 				</Stack>
 
 			</div>
@@ -45,4 +44,4 @@ const Users = ({users, follow, unfollow, setCurrentPage, currentPage, pageSize, 
 
 
 
-export default Users;
+export default Users

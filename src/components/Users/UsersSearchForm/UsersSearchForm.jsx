@@ -1,12 +1,12 @@
-import React from 'react';
-import {Field, Form, Formik, useFormik} from 'formik';
-import {Box, Button, TextField, MenuItem} from '@material-ui/core';
+import React from 'react'
+import {Field, Form, Formik, useFormik} from 'formik'
+import {Box, Button, TextField, MenuItem} from '@material-ui/core'
 import s from './UsersSearchForm.module.scss'
 
 
 export const UsersSearchForm = ({setFilter, filter}) => {
 
-	let {term:currentTermValue, status:currentStatusValue} = filter
+	let {term: currentTermValue, status: currentStatusValue} = filter
 
 	const formik = useFormik({
 		initialValues: {
@@ -14,12 +14,12 @@ export const UsersSearchForm = ({setFilter, filter}) => {
 			status: currentStatusValue,
 		},
 		onSubmit: (values, {setSubmitting}) => {
-			setFilter(values);
+			setFilter(values)
 			setSubmitting(false)
 		}
 	})
-		return(
-		<div className = {s.formWrapper} >
+	return (
+		<div className={s.formWrapper} >
 			<Box height={20} />
 			<h1>Find your friend:</h1>
 			<Box height={20} />
@@ -68,5 +68,5 @@ export const UsersSearchForm = ({setFilter, filter}) => {
 				)}
 			</Formik>
 		</div >
-	);
-};
+	)
+}

@@ -1,18 +1,18 @@
-import {Button} from '@material-ui/core';
+import {Button} from '@material-ui/core'
 import React from 'react'
-import {NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom'
 import s from './StartPage.module.scss'
 
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import {Box} from '@mui/system';
+import ImageList from '@mui/material/ImageList'
+import ImageListItem from '@mui/material/ImageListItem'
+import {Box} from '@mui/system'
 
 function srcset(image, size, rows = 1, cols = 1) {
 	return {
 		src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
 		srcSet: `${image}?w=${size * cols}&h=${size * rows
 			}&fit=crop&auto=format&dpr=2 2x`,
-	};
+	}
 }
 
 const QuiltedImageList = () => {
@@ -33,7 +33,7 @@ const QuiltedImageList = () => {
 				</ImageListItem>
 			))}
 		</ImageList>
-	);
+	)
 }
 
 const itemData = [
@@ -95,7 +95,7 @@ const itemData = [
 		title: 'Bike',
 		cols: 2,
 	},
-];
+]
 
 
 const StartPage = ({isAuth, router}) => {
@@ -104,17 +104,17 @@ const StartPage = ({isAuth, router}) => {
 		<div className={s.startPage} data-testid='start-page'>
 			<div>
 				<p>Welcome to Social network homepage!</p>
-				<Box height={20}/>
-				<QuiltedImageList/>
-				<Box height={20}/>
+				<Box height={20} />
+				<QuiltedImageList />
+				<Box height={20} />
 				{!isAuth &&
 					<>
-						<p>Please <Button  variant='contained' color='primary'><NavLink data-testid={'login-link'} to='/login'>Login</NavLink></Button> first!</p>
+						<p>Please <Button variant='contained' color='primary'><NavLink data-testid={'login-link'} to='/login'>Login</NavLink></Button> first!</p>
 					</>
 				}
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default StartPage;
+export default StartPage

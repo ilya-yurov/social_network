@@ -1,9 +1,9 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import { BrowserRouter, MemoryRouter, Routes } from 'react-router-dom';
-import Users from './Users';
+import {render, screen, fireEvent} from '@testing-library/react'
+import {BrowserRouter, MemoryRouter, Routes} from 'react-router-dom'
+import Users from './Users'
 
 describe('Users component test', () => {
-	let response, filter;
+	let response, filter
 	beforeAll(() => {
 		response = {
 			items: [
@@ -42,30 +42,30 @@ describe('Users component test', () => {
 				}
 			]
 		},
-		filter = {
-			term: '',
-			status: null
-		}
+			filter = {
+				term: '',
+				status: null
+			}
 	})
 
 	test('The Users component is being rendered', () => {
 		render(
 			<MemoryRouter>
-				<Users users={response.items} filter={filter}/>
+				<Users users={response.items} filter={filter} />
 			</MemoryRouter>
-		);
-		const usersSearchForm = screen.getByText(/find your friend/i);
-		expect(usersSearchForm).toBeInTheDocument();
-	});
+		)
+		const usersSearchForm = screen.getByText(/find your friend/i)
+		expect(usersSearchForm).toBeInTheDocument()
+	})
 
 	test('The number of Users elements is 3', () => {
 		render(
 			<MemoryRouter>
-				<Users users={response.items} filter={filter}/>
+				<Users users={response.items} filter={filter} />
 			</MemoryRouter>
-		);
-		screen.debug();
-		const usersElements = screen.getAllByTestId('user-element');
-		expect(usersElements.length).toBe(3);
+		)
+		screen.debug()
+		const usersElements = screen.getAllByTestId('user-element')
+		expect(usersElements.length).toBe(3)
 	})
 })

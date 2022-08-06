@@ -1,9 +1,8 @@
-import React, {useRef} from 'react';
+import React, {useRef} from 'react'
 import s from './InputPost.module.scss'
-import {Field, Form, Formik, useFormik} from 'formik';
-import {Box, Button, TextField, MenuItem} from '@material-ui/core';
-import {object, string} from 'yup';
-import {Stack} from '@mui/material';
+import {Field, Form, Formik} from 'formik'
+import {Box, Button, TextField} from '@material-ui/core'
+import {Stack} from '@mui/material'
 
 
 const InputPostForm = ({onSendMessage}) => {
@@ -20,7 +19,7 @@ const InputPostForm = ({onSendMessage}) => {
 				innerRef={formikRef}
 				initialValues={initialValues}
 				onSubmit={(values, {resetForm}) => {
-					onSendMessage(values.term);
+					onSendMessage(values.term)
 					resetForm(initialValues)
 					formikRef.current.setSubmitting(false)
 				}}
@@ -28,12 +27,12 @@ const InputPostForm = ({onSendMessage}) => {
 				{({isSubmitting, values, handleChange}) => (
 					<Form>
 						<Stack
-						spacing={1}
-						alignItems='flex-end'
+							spacing={1}
+							alignItems='flex-end'
 						>
 							<Field
-							fullWidth
-							multiline
+								fullWidth
+								multiline
 								type="text"
 								name="term"
 								as={TextField}
@@ -55,7 +54,7 @@ const InputPostForm = ({onSendMessage}) => {
 				)}
 			</Formik>
 		</div >
-	);
+	)
 }
 
-export default InputPostForm;
+export default InputPostForm

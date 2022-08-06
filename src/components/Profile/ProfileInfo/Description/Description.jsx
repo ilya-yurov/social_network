@@ -11,19 +11,22 @@ const Description = (props) => {
 			<p>{props.info.fullName}</p>
 
 			{!props.info.aboutMe ?
-			<p><span className={s.content__aboutMe}>About me:</span> no information</p>
-			:
-			<p><span className={s.content__aboutMe}>About me:</span> {props.info.aboutMe}</p> }
+				<p><span className={s.content__aboutMe}>About me:</span> no information</p>
+				:
+				<p><span className={s.content__aboutMe}>About me:</span> {props.info.aboutMe}</p>}
 
-			<p><span className={s.content__aboutMe}>Look for a job:</span> {props.info.lookingForAJob
-			?
-			<img src={yes}/>
-			:
-			<img src={no}/>}</p>
-			
+			<p>
+				<span className={s.content__aboutMe}>Look for a job:</span>
+				{props.info.lookingForAJob
+					?
+					<img src={yes} alt='yes' />
+					:
+					<img src={no} alt='no' />}
+			</p>
+
 			<p><span className={s.content__aboutMe}>Description:</span> {props.info.lookingForAJobDescription}</p>
 			<ProfileStatus isAuth={props.isAuth} currentUserId={props.currentUserId}
-			status={props.status} updateStatus={props.updateStatus} />
+				status={props.status} updateStatus={props.updateStatus} />
 			<p><span className={s.content__aboutMe}>Contacts:</span></p>
 			<div className={s.content__contacts}>
 				{props.info.contacts.facebook ? <div className={s.content__contact}><span>Facebook:</span> {props.info.contacts.facebook}</div> : null}
@@ -36,7 +39,7 @@ const Description = (props) => {
 				{props.info.contacts.mainLink ? <div className={s.content__contact}><span>E-mail:</span> {props.info.contacts.mainLink}</div> : null}
 			</div>
 		</div>
-	);
+	)
 }
 
 export default Description

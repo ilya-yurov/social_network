@@ -1,14 +1,13 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
-import {withAuthRedirect} from '../../hoc/withAuthRedirect';
-import NewsPage from './NewsPage';
+import {withAuthRedirect} from '../../hoc/withAuthRedirect'
+import NewsPage from './NewsPage'
 
 const NewsPageContainer = () => {
 	return (
 		<div>
-			<NewsPage/>
+			<NewsPage />
 		</div>
-	);
-};
+	)
+}
 
-export default withAuthRedirect(NewsPageContainer);
+export default withAuthRedirect(NewsPageContainer)

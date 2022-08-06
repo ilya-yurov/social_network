@@ -34,7 +34,7 @@ export const Login = ({loginUser, isAuth}) => {
 							password: string().required('Please enter password')
 						})}
 					onSubmit={(values, {setStatus}) => {
-						loginUser(values, setStatus, formikRef.current.setSubmitting);
+						loginUser(values, setStatus, formikRef.current.setSubmitting)
 					}}
 				>
 
@@ -55,7 +55,7 @@ export const Login = ({loginUser, isAuth}) => {
 							<Box height={15} />
 							<Field
 								fullWidth
-								
+
 								type="password"
 								name="password"
 								as={TextField}
@@ -69,7 +69,7 @@ export const Login = ({loginUser, isAuth}) => {
 							<Box height={15} />
 							<div className={s.formWrapper__bottom}>
 								<FormControlLabel
-									control={<Checkbox checked={values.rememberMe} color='primary'/>}
+									control={<Checkbox checked={values.rememberMe} color='primary' />}
 									label="remember me"
 									name="rememberMe"
 									onChange={handleChange}
@@ -86,7 +86,7 @@ export const Login = ({loginUser, isAuth}) => {
 							<Box height={15} />
 							{status &&
 								<div>
-									<Alert severity='error'>API Error: {status.error}</Alert> 
+									<Alert severity='error'>API Error: {status.error}</Alert>
 								</div>
 							}
 						</Form>
@@ -100,5 +100,5 @@ export const Login = ({loginUser, isAuth}) => {
 	} else {
 		return <Navigate to={'/profile'} />
 	}
-};
+}
 export default Login

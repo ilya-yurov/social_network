@@ -1,15 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
 import s from "./Dialog.module.scss"
 
 const Dialog = (props) => {
 
-	const path = `/dialogs/${props.id}`;
+	const path = `/dialogs/${props.id}`
 
 	const activeToogle = () => {
-		props.activeToogle(props.id);
+		props.activeToogle(props.id)
 	}
 
-	if (props.active == 1) {
+	if (props.active === 1) {
 		return (
 			<div className={`${s.dialog} ${s.dialog_active}`}>
 				<button onClick={activeToogle}>
@@ -28,4 +28,4 @@ const Dialog = (props) => {
 	}
 }
 
-export default Dialog;
+export default Dialog

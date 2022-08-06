@@ -1,11 +1,11 @@
-import { MemoryRouter } from 'react-router-dom';
-import AppRouter from '../components/AppRouter/AppRouter';
+import {MemoryRouter} from 'react-router-dom'
+import AppRouter from '../components/AppRouter/AppRouter'
 
 
 export const updateObjectInArray = (items, itemId, objPropName, newObjProps) => {
 	return items.map(u => {
 		if (u[objPropName] === itemId) {
-			return { ...u, ...newObjProps };
+			return {...u, ...newObjProps}
 		} else {
 			return u
 		}
@@ -13,20 +13,20 @@ export const updateObjectInArray = (items, itemId, objPropName, newObjProps) => 
 }
 
 export const pageSlicer = (totalUsersCount, pageSize, currentPage) => {
-	let pagesCount = Math.ceil(totalUsersCount / pageSize);
-	let pages = [];
+	let pagesCount = Math.ceil(totalUsersCount / pageSize)
+	let pages = []
 	for (let i = 1; i <= pagesCount; i++) {
-		pages.push(i);
+		pages.push(i)
 	}
-	let curP = currentPage;
-	return pages.slice(curP < 4 ? 0 : curP - 4, curP < 4 ? 7 : curP + 3);
+	let curP = currentPage
+	return pages.slice(curP < 4 ? 0 : curP - 4, curP < 4 ? 7 : curP + 3)
 }
 
 export const renderWithRouter = (component, initialRoute = '/') => {
-	
+
 	return (
 		<MemoryRouter initialEntries={[initialRoute]}>
-			<AppRouter/>
+			<AppRouter />
 			{component}
 		</MemoryRouter>
 	)

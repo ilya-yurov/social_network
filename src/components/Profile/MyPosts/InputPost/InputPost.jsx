@@ -1,7 +1,7 @@
 import React, {useRef} from 'react'
 import s from './InputPost.module.scss'
-import {Field, Form, Formik, useFormik} from 'formik'
-import {Box, Button, TextField, MenuItem} from '@material-ui/core'
+import {Field, Form, Formik} from 'formik'
+import {Box, Button, TextField} from '@material-ui/core'
 import {object, string} from 'yup'
 import {Stack} from '@mui/material'
 
@@ -19,25 +19,25 @@ const InputPostForm = (props) => {
 				innerRef={formikRef}
 				initialValues={initialValues}
 				onSubmit={(values, {resetForm}) => {
-					props.onAddNewPost(values.term);
+					props.onAddNewPost(values.term)
 					resetForm(initialValues)
 					formikRef.current.setSubmitting(false)
 				}}
 				validationSchema={object(
 					{
 						term: string().required('Please enter email')
-						.max(200)
+							.max(200)
 					})}
 			>
 				{({isSubmitting, values, handleChange}) => (
 					<Form>
 						<Stack
-						spacing={1}
-						alignItems='flex-end'
+							spacing={1}
+							alignItems='flex-end'
 						>
 							<Field
-							fullWidth
-							multiline
+								fullWidth
+								multiline
 								type="text"
 								name="term"
 								as={TextField}
@@ -59,7 +59,7 @@ const InputPostForm = (props) => {
 				)}
 			</Formik>
 		</div >
-	);
+	)
 }
 
 export default InputPostForm

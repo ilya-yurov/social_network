@@ -1,10 +1,10 @@
-import {AppBar, Box, Toolbar, Typography} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import LogoutIcon from '@mui/icons-material/Logout';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import HomeIcon from '@mui/icons-material/Home';
+import {AppBar, Box, Toolbar, Typography} from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+import LogoutIcon from '@mui/icons-material/Logout'
+import AccountCircle from '@mui/icons-material/AccountCircle'
+import HomeIcon from '@mui/icons-material/Home'
 
-import {NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom'
 import s from './Header.module.scss'
 
 const Header = ({isAuth, login, logoutUser, handleNavbar}) => {
@@ -33,7 +33,7 @@ const Header = ({isAuth, login, logoutUser, handleNavbar}) => {
 				</Toolbar>
 			</AppBar>
 		</Box >
-	);
+	)
 }
 
-export default Header;
+export default Header

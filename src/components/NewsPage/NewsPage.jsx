@@ -8,7 +8,7 @@ const NewsPage = (props) => {
 				NEWS PAGE
 			</h1>
 		</div>
-	);
-};
+	)
+}
 
-export default NewsPage;
+export default NewsPage

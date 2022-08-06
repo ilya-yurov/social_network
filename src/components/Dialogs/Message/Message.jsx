@@ -2,7 +2,7 @@ import s from "./Message.module.scss"
 
 
 const Message = (props) => {
-	if (props.active == 1) {
+	if (props.active === 1) {
 		return (
 			<div className={`${s.message} ${s.message_active}`}>{props.message}</div>
 		)
@@ -13,4 +13,4 @@ const Message = (props) => {
 	}
 }
 
-export default Message;
+export default Message

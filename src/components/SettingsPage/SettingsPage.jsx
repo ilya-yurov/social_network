@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
 import s from './SettingsPage.module.scss'
 
 const SettingsPage = (props) => {
@@ -9,7 +8,7 @@ const SettingsPage = (props) => {
 				SETTINGS PAGE
 			</h1>
 		</div>
-	);
-};
+	)
+}
 
-export default SettingsPage;
+export default SettingsPage

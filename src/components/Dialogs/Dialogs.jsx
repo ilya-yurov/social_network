@@ -7,17 +7,17 @@ import Message from './Message/Message'
 
 const Dialogs = (props) => {
 
-	const [dialogs, setDialogs] = useState(props.dialogs);
+	const [dialogs, setDialogs] = useState(props.dialogs)
 
 	const activeToogle = (id) => {
-		console.trace();
+		console.trace()
 		const newDialogs = dialogs.map(dialog => {
 			if (dialog.id === id)
-				return {...dialog, active: 1};
+				return {...dialog, active: 1}
 			else
-				return {...dialog, active: 0};
+				return {...dialog, active: 0}
 		})
-		setDialogs(newDialogs);
+		setDialogs(newDialogs)
 	}
 
 	let dialogElements = dialogs.map((d) => <Dialog activeToogle={activeToogle} name={d.name} id={d.id} key={d.id} active={d.active} />)
@@ -25,7 +25,7 @@ const Dialogs = (props) => {
 	return (
 		<>
 			<Typography textAlign='center' variant='h4' >There is dialogs page prototype here </Typography>
-			<Box height={30}/>
+			<Box height={30} />
 			<div className={s.wrapper}>
 				<div className={s.content}>
 					<div className={s.content__dialogs}>
@@ -43,4 +43,4 @@ const Dialogs = (props) => {
 
 
 
-export default Dialogs;
+export default Dialogs

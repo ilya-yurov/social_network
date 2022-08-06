@@ -1,6 +1,6 @@
-import {Avatar, Typography} from '@mui/material';
-import {deepOrange} from '@mui/material/colors';
-import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
+import {Avatar, Typography} from '@mui/material'
+import {deepOrange} from '@mui/material/colors'
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt'
 import s from './Post.module.scss'
 
 
@@ -21,7 +21,7 @@ const Post = (props) => {
 				{props.likes}
 			</div>
 		</div>
-	);
+	)
 }
 
-export default Post;
+export default Post
