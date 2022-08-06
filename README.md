@@ -19,17 +19,17 @@ As a teaching aid, I used a [course](https://www.youtube.com/playlist?list=PLcvh
 **etc.**
 
 ## How to build this project:
-1. **You need pre-installed NodeJS, npm and Git**
-  You can check your packages version by
-  ### `node -v` `npm -v` and `git --version`
+**You need pre-installed NodeJS, npm and Git.**
+**You can check your packages version by**
+### `node -v` `npm -v` and `git --version`
 
-2. **First clone repository to your working dirrectory by**
-  ### `git clone https://github.com/ilya-yurov/social_network`
+**1. First clone repository to your working dirrectory by**
+### `git clone https://github.com/ilya-yurov/social_network`
 
-3. **Then install all required packages by**
-  ### `npm install`
-4. **Now you can start or build the project from your working dir by**
-  ### `npm start` or `npm build`
+**2. Then install all required packages by**
+### `npm install`
+**3. Now you can start or build the project from your working dir by**
+### `npm start` or `npm build`
 
 ## Social network components diagram
 
